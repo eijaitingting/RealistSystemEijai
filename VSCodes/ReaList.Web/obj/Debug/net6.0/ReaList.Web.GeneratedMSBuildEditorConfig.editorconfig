@@ -1,0 +1,257 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ReaList.Web
+build_property.RootNamespace = ReaList.Web
+build_property.ProjectDir = C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystem\VSCodes\ReaList.Web\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystem\VSCodes\ReaList.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Admin/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5EYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Admin/AdminForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5Gb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Admin/AdminLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Admin/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Admin/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRm9yZ290UGFzc3dvcmRDb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Admin/Subscription.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3Vic2NyaXB0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/AgentAccount/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRBY2NvdW50XFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/AddProperty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcQWRkUHJvcGVydHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcRm9yZ290UGFzc3dvcmRDb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/GetAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcR2V0QWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/Listings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcTGlzdGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/Listings_Old.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcTGlzdGluZ3NfT2xkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/Overview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcT3ZlcnZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcUGF5bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/Subscription.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcU3Vic2NyaXB0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/SubscriptionForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcU3Vic2NyaXB0aW9uRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Agent/VerifyCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRcVmVyaWZ5Q29kZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Booking/ApprovedBookings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xBcHByb3ZlZEJvb2tpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Booking/Book.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Booking/Bookings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29raW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Booking/CancelledBookings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDYW5jZWxsZWRCb29raW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Booking/EditBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xFZGl0Qm9va2luZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Booking/RecentBookings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xSZWNlbnRCb29raW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Booking/RescheduledBookings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xSZXNjaGVkdWxlZEJvb2tpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Complaints/AddComplaint.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxhaW50c1xBZGRDb21wbGFpbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Complaints/Complaints.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGxhaW50c1xDb21wbGFpbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/CustomerAccount/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJBY2NvdW50XEZvcmdvdFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/CustomerAccount/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJBY2NvdW50XFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Customer/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWJvdXRVcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Customer/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Customer/ContactUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ29udGFjdFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Customer/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRm9yZ290UGFzc3dvcmRDb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Customer/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Customer/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Customer/RateAgent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcUmF0ZUFnZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Customer/VerifyCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcVmVyaWZ5Q29kZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Home/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Home/PropertiesForRent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9wZXJ0aWVzRm9yUmVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Home/PropertiesForSale.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9wZXJ0aWVzRm9yU2FsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Home/UserTypeSelection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VyVHlwZVNlbGVjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Property/ActiveListings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcQWN0aXZlTGlzdGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Property/AddProperty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcQWRkUHJvcGVydHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Property/EditProperty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcRWRpdFByb3BlcnR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Property/ListingsForRent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcTGlzdGluZ3NGb3JSZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Property/ListingsForSale.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcTGlzdGluZ3NGb3JTYWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Property/PropertyDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcUHJvcGVydHlEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Property/RentedListings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcUmVudGVkTGlzdGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Property/SoldListings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcGVydHlcU29sZExpc3RpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Testimony/AddTestimony.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb255XEFkZFRlc3RpbW9ueS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eijai/OneDrive/Documents/GitHub/RealistSystem/VSCodes/ReaList.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-se2bxymjov

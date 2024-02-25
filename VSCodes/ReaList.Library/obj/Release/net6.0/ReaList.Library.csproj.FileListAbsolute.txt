@@ -1,0 +1,14 @@
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\bin\Release\net6.0\ReaList.Library.deps.json
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\bin\Release\net6.0\ReaList.Library.runtimeconfig.json
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\bin\Release\net6.0\ReaList.Library.dll
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\bin\Release\net6.0\ReaList.Library.pdb
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\obj\Release\net6.0\ReaList.Library.csproj.AssemblyReference.cache
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\obj\Release\net6.0\ReaList.Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\obj\Release\net6.0\ReaList.Library.AssemblyInfoInputs.cache
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\obj\Release\net6.0\ReaList.Library.AssemblyInfo.cs
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\obj\Release\net6.0\ReaList.Library.csproj.CoreCompileInputs.cache
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\obj\Release\net6.0\ReaList.Library.dll
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\obj\Release\net6.0\refint\ReaList.Library.dll
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\obj\Release\net6.0\ReaList.Library.pdb
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\obj\Release\net6.0\ReaList.Library.genruntimeconfig.cache
+D:\Eijai\ISPROJ2\ISPROJ2_combined-20230916T010540Z-001\ISPROJ2_combined\VSCodes\ReaList.Library\obj\Release\net6.0\ref\ReaList.Library.dll

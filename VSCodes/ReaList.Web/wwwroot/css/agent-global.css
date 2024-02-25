@@ -1,0 +1,33 @@
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+body {
+  overflow: -moz-scrollbars-horizontal;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+header {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* navbar */
+a.main-nav {
+  color: #8591A9;
+}
+a.main-nav:hover {
+  color: #283B62;
+}
+a.nav-link.main-nav.active {
+  color: #283B62;
+  font-weight: bold;
+}
+a.main-nav.active:hover {
+  color: #8591A9;
+}
+a.dropdown-item.active:hover {
+  background-color: #8591A9;
+  color: #fff;
+}

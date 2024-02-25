@@ -1,0 +1,22 @@
+﻿.text-header {
+    color: #283B62;
+    font-weight: bold;
+    text-align: start;
+}
+div.col-md-6 {
+    text-align: end;
+}
+a.btn.add-new {
+    background-color: rgb(59, 89, 152, 0.85);
+    color: #FFFFFF;
+    border: 2px solid rgb(59, 89, 152, 0.85);
+    width: 50%;
+    height: 45px;
+}
+a.btn.add-new:hover {
+    background-color: #FFFFFF;
+    color: rgb(59, 89, 152, 0.85);
+    border: 2px solid rgb(59, 89, 152, 0.85);
+    width: 50%;
+    height: 45px;
+}

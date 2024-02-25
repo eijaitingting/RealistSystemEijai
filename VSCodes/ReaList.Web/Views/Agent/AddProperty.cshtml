@@ -1,0 +1,123 @@
+@model ReaList.Library.Model.Properties.PropertyModel
+
+@{
+    ViewData["Title"] = "Property";
+}
+
+<h1>Add Property</h1>
+<hr />
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="error-message text-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<form asp-controller="Agent" asp-action="SaveProperty" method="post">
+    <div class="row mb-5">
+        <div class="col-md-6">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input asp-for="PropertyID" class="form-control" type="hidden" />
+                </div>
+                <div class="form-group">
+                    <input asp-for="AgentID" class="form-control" type="hidden" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PropertyCategoryID">PropertyCategory</label>
+                    <select asp-for="PropertyCategoryID" name="PropertyCategoryID" class="form-control">
+                        <option value="1">For Rent</option>
+                        <option value="2">For Sale</option>
+                    </select>
+                    <span asp-validation-for="PropertyCategoryID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PropertyTypeID">Property Type</label>
+                    <select asp-for="PropertyTypeID" name="PropertyTypeID" class="form-control">
+                        <option value="1">House and Lot</option>
+                        <option value="2">Condominium</option>
+                        <option value="2">Apartment</option>
+                    </select>
+                    <span asp-validation-for="PropertyTypeID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PropertyName" class="control-label"></label>
+                    <input asp-for="PropertyName" class="form-control" />
+                    <span asp-validation-for="PropertyName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Overview" class="control-label"></label>
+                    <input asp-for="Overview" class="form-control" />
+                    <span asp-validation-for="Overview" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TotalPrice" class="control-label"></label>
+                    <input asp-for="TotalPrice" class="form-control" />
+                    <span asp-validation-for="TotalPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Bedrooms" class="control-label"></label>
+                    <input asp-for="Bedrooms" class="form-control" />
+                    <span asp-validation-for="Bedrooms" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Bathrooms" class="control-label"></label>
+                    <input asp-for="Bathrooms" class="form-control" />
+                    <span asp-validation-for="Bathrooms" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Region" class="control-label"></label>
+                    <input asp-for="Region" class="form-control" />
+                    <span asp-validation-for="Region" class="text-danger"></span>
+                </div>
+            </div>
+        <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Municipality" class="control-label"></label>
+                    <input asp-for="Municipality" class="form-control" />
+                    <span asp-validation-for="Municipality" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Barangay" class="control-label"></label>
+                    <input asp-for="Barangay" class="form-control" />
+                    <span asp-validation-for="Barangay" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Street" class="control-label"></label>
+                    <input asp-for="Street" class="form-control" />
+                    <span asp-validation-for="Street" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ZipCode" class="control-label"></label>
+                    <input asp-for="ZipCode" class="form-control" />
+                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FloorAreaSize" class="control-label"></label>
+                    <input asp-for="FloorAreaSize" class="form-control" />
+                    <span asp-validation-for="FloorAreaSize" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DevelopmentInfo" class="control-label"></label>
+                    <input asp-for="DevelopmentInfo" class="form-control" />
+                    <span asp-validation-for="DevelopmentInfo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="PropertyStatus" class="form-control" type="hidden" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Add Property" class="btn btn-primary float-end" />
+                </div>
+            </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

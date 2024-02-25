@@ -1,0 +1,373 @@
+﻿@model ReaList.Library.Model.Properties.PropertyModel
+
+@{
+    ViewData["Title"] = "PropertyDetails";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Property Details</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/customer-propertyinfo.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap Font and Icons 1.3.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="d-flex container justify-content-center">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="row mt-4">
+
+                        @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                        {
+                            <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+                        }
+                        @if (ViewBag.ErrorMessage != null)
+                        {
+                            <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                        }
+
+                        <!-- Carousel wrapper -->
+                        <div id="propertyCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <!-- Indicators -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                                <button type="button" data-bs-target="#propertyCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                            </div>
+
+                            <!-- Inner -->
+                            <div class="carousel-inner">
+                                <!-- Single item -->
+                                <div class="carousel-item active">
+                                    @if (Model.MainPhoto != null)
+                                    {
+                                        <img src="~/UploadedFiles/@Html.DisplayFor(model => model.MainPhoto)" style="width: 300px; height:200px;" />
+                                    }
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item">
+                                    @if (Model.SecondPhoto != null)
+                                    {
+                                        <img src="~/UploadedFiles/@Html.DisplayFor(model => model.SecondPhoto)" style="width: 300px; height:200px;" />
+                                    }
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item">
+                                    @if (Model.ThirdPhoto != null)
+                                    {
+                                        <img src="~/UploadedFiles/@Html.DisplayFor(model => model.ThirdPhoto)" style="width: 300px; height:200px;" />
+                                    }
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item">
+                                    @if (Model.FourthPhoto != null)
+                                    {
+                                        <img src="~/UploadedFiles/@Html.DisplayFor(model => model.FourthPhoto)" style="width: 300px; height:200px;" />
+                                    }
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item">
+                                    @if (Model.FifthPhoto != null)
+                                    {
+                                        <img src="~/UploadedFiles/@Html.DisplayFor(model => model.FifthPhoto)" style="width: 300px; height:200px;" />
+                                    }
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item">
+                                    @if (Model.SixthPhoto != null)
+                                    {
+                                        <img src="~/UploadedFiles/@Html.DisplayFor(model => model.SixthPhoto)" style="width: 300px; height:200px;" />
+                                    }
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item">
+                                    @if (Model.SeventhPhoto != null)
+                                    {
+                                        <img src="~/UploadedFiles/@Html.DisplayFor(model => model.SeventhPhoto)" style="width: 300px; height:200px;" />
+                                    }
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item">
+                                    @if (Model.EightPhoto != null)
+                                    {
+                                    <img src="~/UploadedFiles/@Html.DisplayFor(model => model.EightPhoto)" style="width: 300px; height:200px;" />
+                                    }
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item">
+                                    @if (Model.NinthPhoto != null)
+                                    {
+                                        <img src="~/UploadedFiles/@Html.DisplayFor(model => model.NinthPhoto)" style="width: 300px; height:200px;" />
+                                    }
+                                </div>
+
+                                <!-- Single item -->
+                                <div class="carousel-item">
+                                    @if (Model.TenthPhoto != null)
+                                    {
+                                        <img src="~/UploadedFiles/@Html.DisplayFor(model => model.TenthPhoto)" style="width: 300px; height:200px;" />
+                                    }
+                                </div>
+                            </div>
+                            <!-- Inner -->
+                            <!-- Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <!-- Carousel wrapper -->
+
+                        <div class="col-md-8 mt-3 mb-3">
+                            <h3 class="house-name">@Html.DisplayFor(model => model.PropertyName)</h3>
+                            <i class="bi bi-geo-alt-fill"></i><span class="location">@Html.DisplayFor(model => model.Location)</span><span class="published-date">Published on: @Html.DisplayFor(model => model.DateCreated.Month)/@Html.DisplayFor(model => model.DateCreated.Day)/@Html.DisplayFor(model => model.DateCreated.Year)</span>
+                        </div>
+                        <div class="col-md-4 mt-3 mb-3">
+                            <a asp-controller="Booking" asp-action="Book" asp-route-propertyId="@Model.PropertyID" class="bookBtn">
+                                <b>Book a Visit</b>
+                            </a>
+                        </div>
+
+                        <!-- overview -->
+                        <div class="col-md-8">
+                            <div class="container overview">
+                                <p class="title-overview">Overview</p>
+                                <p class="overview">
+                                    @Html.DisplayFor(model => model.Overview)
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- property info -->
+                        <div class="col-md-4">
+                            <div class="container prop-info">
+                                <p class="title-prop">THIS PROPERTY IS @Html.DisplayFor(model => model.PropertyCategoryName)</p>
+                                <p class="price">₱@Html.DisplayFor(model => model.TotalPrice)</p>
+                                <p class="address">@Html.DisplayFor(model => model.Location)</p>
+                                <p class="title-proptype">Property Type: <span class="ribbon house">@Html.DisplayFor(model => model.PropertyTypeName)</span></p>
+                                <div class="row other-info">
+                                    <div class="col-md-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="bed" viewBox="0 0 640 512"><path d="M176 256c44.11 0 80-35.89 80-80s-35.89-80-80-80-80 35.89-80 80 35.89 80 80 80zm352-128H304c-8.84 0-16 7.16-16 16v144H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v352c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16v-48h512v48c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V240c0-61.86-50.14-112-112-112z" /></svg>
+                                        <span class="nobeds">&nbsp;@Html.DisplayFor(model => model.Bathrooms) beds</span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="bath" viewBox="0 0 512 512"><path d="M96 77.3c0-7.3 5.9-13.3 13.3-13.3c3.5 0 6.9 1.4 9.4 3.9l14.9 14.9C130 91.8 128 101.7 128 112c0 19.9 7.2 38 19.2 52c-5.3 9.2-4 21.1 3.8 29c9.4 9.4 24.6 9.4 33.9 0L289 89c9.4-9.4 9.4-24.6 0-33.9c-7.9-7.9-19.8-9.1-29-3.8C246 39.2 227.9 32 208 32c-10.3 0-20.2 2-29.2 5.5L163.9 22.6C149.4 8.1 129.7 0 109.3 0C66.6 0 32 34.6 32 77.3V256c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H96V77.3zM32 352v16c0 28.4 12.4 54 32 71.6V480c0 17.7 14.3 32 32 32s32-14.3 32-32V464H384v16c0 17.7 14.3 32 32 32s32-14.3 32-32V439.6c19.6-17.6 32-43.1 32-71.6V352H32z" /></svg>
+                                        <span class="nobaths">&nbsp;@Html.DisplayFor(model => model.Bathrooms) bath</span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <i class="bi bi-square"></i>
+                                        <span class="sqm">@Html.DisplayFor(model => model.FloorAreaSize) sqm</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- amenities -->
+                        <div class="col-md-8 mb-5">
+                            <div class="container amenities">
+                                <p class="title-amenities">Amenities</p>
+                                @if (Model.AmenitiesName != null)
+                                {
+                                    @foreach (var amenity in Model.AmenitiesName)
+                                    {
+                                        <ul class="amenities">
+                                            <li>@amenity</li>
+                                        </ul>
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                        <!-- contact agent inquire -->
+                        @*<div class="col-md-4">
+                            <div class="container inquire">
+                                <p class="inquire">INQUIRE NOW</p>
+                                <div class="container agent-info">
+                                    <a href="/customer-agentsprofile.html" class="linkAgentsProf">
+                                        <img src="./images/agent1.png" alt="Agent Image">
+                                        <div class="agent-name">Jane Smith</div>
+                                        <div class="agent-desig">Freelance</div>
+                                    </a>
+                                </div>
+                                <p class="cellno">0967<span class="showno"><a href="#">Show Number</a></span></p>
+                                <input type="text" placeholder="Janna Hearts" class="form-control" id="cust-name" name="cust-name">
+                                <input type="tel" placeholder="+639123456789" class="form-control" id="cust-cont" name="cust-cont">
+                                <input type="email" placeholder="janna.hearts@yahoo.com" class="form-control" id="cust-email" name="cust-email">
+                                <textarea id="cust-mess" name="cust-mess" placeholder="Type your message here..."></textarea>
+                                <button type="submit" class="contactBtn" data-bs-toggle="modal" data-bs-target="#contactAgentButton">Contact Agent</button>
+                                <p class="before-contact">By clicking Contact Agent, you are agreeing to accept Privacy and Terms of ReaList.</p>
+                            </div>
+                        </div>*@
+
+                        <!-- developer info -->
+                        <div class="col-md-8">
+                            <div class="container devinfo">
+                                <p class="title-devinfo">Developer Information</p>
+                                <p class="devinfo">
+                                    @Html.DisplayFor(model => model.DevelopmentInfo)
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- property features -->
+                        <div class="col-md-4">
+                            <p class="title-features text-center">Features</p>
+                            <div class="container features">
+                                <div class="row featrow1">
+                                    @if (Model.FeaturesName != null)
+                                    {
+                                        @foreach (var feature in Model.FeaturesName)
+                                        {
+                                            <ul>
+                                                <p>@feature</p>
+                                            </ul>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- property loc -->
+                        <div class="col-md-8">
+                            @*<p class="title-proploc">Property Location</p>
+                            <p class="proploc">@Html.DisplayFor(model => model.Location)</p>*@
+                        </div>
+
+                        <!-- neighborhood rating -->
+                        <div class="col-md-4 neighRate">
+                            <p class="title-neighrate">Neighborhood Rating</p>
+                            <p class="title-totarea">TOTAL AREA RATING</p>
+                        </div>
+                        
+                        <!-- geolocation -->
+                        <div class="col-md-8">
+                            @*<div class="mapouter proploc-map">
+                                <div class="gmap_canvas1">
+                                    <iframe class="gmap_iframe1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=University o38 Sct. Borromeo Street South Triangle Diliman 1100, Q.C.f Oxford&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                                </div>
+                            </div>*@
+                        </div>
+
+                        
+
+                        <!-- star rate -->
+                        <div class="col-md-4 justify-content-center mb-4">
+                            <p class="averating">@Html.DisplayFor(model => model.TotalRatings)</p>
+                            <p class="sub-rating">out of 5</p>
+
+                            <div class="text-center">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="rate-road">Roads</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="elements">
+                                            @Html.DisplayFor(model => model.RoadRatings)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="rate-safety">Safety</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="elements">
+                                            @Html.DisplayFor(model => model.SafetyRatings)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="rate-clean">Cleanliness</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="elements">
+                                            @Html.DisplayFor(model => model.CleanlinessRatings)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="rate-parking">Parking</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="elements">
+                                            @Html.DisplayFor(model => model.ParkingRatings)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="rate-traffic">Traffic</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="elements">
+                                            @Html.DisplayFor(model => model.TrafficRatings)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="rate-school">School</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="elements">
+                                            @Html.DisplayFor(model => model.SchoolRatings)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p class="rate-resto">Restaurants</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="elements">
+                                            @Html.DisplayFor(model => model.RestaurantRatings)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

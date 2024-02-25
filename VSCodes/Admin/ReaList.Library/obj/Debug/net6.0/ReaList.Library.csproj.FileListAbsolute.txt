@@ -1,0 +1,14 @@
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\bin\Debug\net6.0\ReaList.Library.deps.json
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\bin\Debug\net6.0\ReaList.Library.runtimeconfig.json
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\bin\Debug\net6.0\ReaList.Library.dll
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\bin\Debug\net6.0\ReaList.Library.pdb
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\obj\Debug\net6.0\ReaList.Library.csproj.AssemblyReference.cache
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\obj\Debug\net6.0\ReaList.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\obj\Debug\net6.0\ReaList.Library.AssemblyInfoInputs.cache
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\obj\Debug\net6.0\ReaList.Library.AssemblyInfo.cs
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\obj\Debug\net6.0\ReaList.Library.csproj.CoreCompileInputs.cache
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\obj\Debug\net6.0\ReaList.Library.dll
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\obj\Debug\net6.0\refint\ReaList.Library.dll
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\obj\Debug\net6.0\ReaList.Library.pdb
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\obj\Debug\net6.0\ReaList.Library.genruntimeconfig.cache
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.Library\obj\Debug\net6.0\ref\ReaList.Library.dll

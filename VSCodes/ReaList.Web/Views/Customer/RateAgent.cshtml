@@ -1,0 +1,38 @@
+﻿@model ReaList.Library.Model.UserAccounts.CustomerAccountModel
+
+@{
+    ViewData["Title"] = "RateAgent";
+}
+
+<h1>RateAgent</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Customer" asp-action="SaveRatings" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BookingID" class="form-control" />
+            <input type="hidden" asp-for="AgentID" class="form-control" />
+            <input type="hidden" asp-for="CustomerID" class="form-control" />
+            <div class="form-group">
+                <label asp-for="AgentRatings" class="control-label"></label>
+                <div class="rating">
+                    <input type="radio" id="rating5" asp-for="AgentRatings" value="5" name="AgentRatings" /><label for="road5">5</label>
+                    <input type="radio" id="rating4" asp-for="AgentRatings" value="4" name="AgentRatings" /><label for="rating4">4</label>
+                    <input type="radio" id="rating3" asp-for="AgentRatings" value="3" name="AgentRatings" /><label for="rating3">3</label>
+                    <input type="radio" id="rating2" asp-for="AgentRatings" value="2" name="AgentRatings" /><label for="rating2">2</label>
+                    <input type="radio" id="rating1" asp-for="AgentRatings" value="1" name="AgentRatings" /><label for="rating1">1</label>
+                </div>
+                <span asp-validation-for="AgentRatings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback" class="control-label"></label>
+                <input asp-for="Feedback" class="form-control" />
+                <span asp-validation-for="Feedback" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

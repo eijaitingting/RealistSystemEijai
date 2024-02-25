@@ -1,0 +1,215 @@
+﻿@model ReaList.Library.Model.RealistsVM
+@{
+    ViewData["Title"] = "Overview";
+}
+
+<head>
+    <title>Overview</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="~/css/global.css">
+    <link rel="stylesheet" href="~/css/agent-overview.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap Font and Icons 1.3.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+</head>
+
+<main>
+    <div class="d-flex container justify-content-center">
+        <div class="row g-3">
+
+            <div class="col-md-12 m-1">
+                <div class="row mt-4">
+                    <!-- agent info -->
+                    <div class="col-md-8">
+                        <div class="agent-content">
+                            <div class="agent-image">
+                                <img src="/images/agent1.png">
+                            </div>
+                            <div class="agent-info">
+                                <p class="a-type">
+                                    Freelance
+                                    <span class="edit">
+                                        <i class="bi bi-pencil-fill"></i>
+                                        <a href="/agent-verifiedprofile.html"> Edit Profile</a>
+                                    </span>
+                                </p>
+                                <p class="agent-name">@(Model.agentAccountModel.FirstName + " " + Model.agentAccountModel.LastName) </p>
+                                <p class="agent-add">@Model.agentAccountModel.Address</p>
+                                <p class="agent-school">@Model.agentAccountModel.Education</p>
+                                <p class="agent-mem">Member of @Model.agentAccountModel.CompanyName</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- total agent rating -->
+                    <div class="col-md-4 mb-4">
+                        <div class="agent-rating">
+                            <p class="title-agentrating">Total Agent Rating</p>
+                            <p class="averating">4.92</p>
+                            <p class="sub-rating">from 15 clients</p>
+                            <div class="agent-rate">
+                                <input type="radio" id="agentrate5" name="agent-rating" value="5" checked /><label for="agentrate5"></label>
+                                <input type="radio" id="agentrate4" name="agent-rating" value="4" /><label for="agentrate4"></label>
+                                <input type="radio" id="agentrate3" name="agent-rating" value="3" /><label for="agentrate3"></label>
+                                <input type="radio" id="agentrate2" name="agent-rating" value="2" /><label for="agentrate2"></label>
+                                <input type="radio" id="agentrate1" name="agent-rating" value="1" /><label for="agentrate1"></label>
+                            </div>
+                            <p class="title-clirev">Client Reviews</p>
+                            <p class="client-review">
+                            </p>
+                            <p class="clientname-rate">- Janna Hearts</p>
+                            <p class="all-revs"><a href="#revandrate">View All</a></p>
+                        </div>
+                    </div>
+                    <!-- agent about -->
+                    <div class="col-md-8 mt-5">
+                        <div class="agent-about">
+                            <p class="title-about">About</p>
+                            <p class="about">
+                                @Model.agentAccountModel.AgentAbout
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="container posted-listings">
+                        <p class="title-posted">Posted Listings</p>
+
+                        <!-- CARD PROPERTIES -->
+                        <div class="row mb-3 cardRow">
+
+                            <!-- PROPERTY -->
+                            @foreach (var prop in Model.propertyList.Where(x => x.AgentID == Model.agentAccountModel.AgentID))
+                            {
+                                var agent = Model.agentAccountModel;
+
+                                <div class="col-md-4">
+                                    <div class="card">
+
+                                        <div class="agent">
+                                            <img src="/images/agent1.png" alt="Agent Image">
+                                            <div class="details">
+                                                <div class="name">@(agent.FirstName + " " + agent.LastName)</div>
+                                                <div class="designation-date p-0">
+                                                    <div class="designation">@agent.AgentType</div>
+                                                    <div class="published-date">Published on : @prop.DateCreated</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="property">
+                                            <a asp-action="EditProperty"><img src="/images/prop1.png" alt="Property Image"></a>
+                                            <div class="ribbon sale">@prop.PropertyCategoryName</div>
+                                        </div>
+
+                                        <div class="property-details">
+                                            <div class="property-name">@prop.PropertyName<span class="price">₱@prop.TotalPrice</span></div>
+                                            <div class="address">@prop.Location</div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            }
+                        </div> <!-- card row end tag -->                            
+                    </div> <!-- container card end tag -->
+
+                    <div class="container">
+                        <div class="row">
+                            <p class="title-revandrat" id="revandrate">Reviews and Ratings Feedback</p>
+                            @foreach (var rev in Model.testimoniesList.Where(x => x.AgentID == Model.agentAccountModel.AgentID))
+                            {
+                                var agent = Model.agentAccountModel;
+                           
+                                    <div class="col-md-6">
+                                        <div class="revandrate">
+                                            <p class="clientname-rev">@(agent.FirstName + " " + @agent.LastName)</p>
+                                            <div class="client-rating">
+                                                <span>
+                                                    <input type="radio" id="clientone5" name="clientone5" value="5" checked /><label for="clientone5"></label>
+                                                    <input type="radio" id="clientone4" name="clientone4" value="4" /><label for="clientone4"></label>
+                                                    <input type="radio" id="clientone3" name="clientone3" value="3" /><label for="clientone3"></label>
+                                                    <input type="radio" id="clientone2" name="clientone2" value="2" /><label for="clientone2"></label>
+                                                    <input type="radio" id="clientone1" name="clientone1" value="1" /><label for="clientone1"></label>
+                                                    <p class="date-published"><b>Date Published: </b>@rev.DateCreated</p>
+                                                </span>
+                                            </div>
+                                            <p class="review">
+                                                @rev.Testimony
+                                            </p>
+                                        </div>
+                                    </div>
+                               
+                            }
+                        </div> <!-- r&r row end tag -->
+                    </div> <!-- container reviews and ratings end tag -->
+                </div> <!-- sub-row end tag -->
+            </div> <!-- col-md-12 end tag -->
+        </div> <!-- main row end tag -->
+    </div> <!-- d-flex parent container end tag -->
+
+    <hr>
+    <div class="d-flex container justify-content-center">
+        <div class="row g-3 col-md-10">
+
+            <div class="col-md-8" id="contactus">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="container reachus">
+                            <p class="title-reachus">Reach Us Through</p>
+                            <p class="title-sales">SALES:</p>
+                            <p class="sales-email">sales@realist.com</p>
+                            <p class="title-admin">ADMIN:</p>
+                            <p class="admin-email">adminsupport@realist.com</p>
+                            <p class="title-custcare">CUSTOMER CARE:</p>
+                            <p class="customer-email">customercare@realist.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="container followus">
+                            <p class="title-followus">Follow Us</p>
+                            <div class="center socmed">
+                                <i class="bi bi-facebook"></i><i class="bi bi-twitter"></i><i class="bi bi-instagram"></i>
+                            </div>
+                            <p class="compadd">711-2880 Nulla St. Manila, Philippines 96522</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="container contactus">
+                    <form>
+                        <p class="title-contactus">CONTACT US</p>
+                        <div class="form-group">
+                            <label for="first-name"><b>First Name</b></label>
+                            <input type="text" class="form-control" id="first-name" name="first-name"><br>
+                            <label for="last-name"><b>Last Name</b></label>
+                            <input type="text" class="form-control" id="last-name" name="last-name"><br>
+                            <label for="email"><b>Email</b></label>
+                            <input type="email" class="form-control" id="email" name="email"><br>
+                            <label for="subject"><b>Subject</b></label>
+                            <input type="text" class="form-control" id="subject" name="subject"><br>
+                            <textarea id="message" name="message" placeholder="Type your message here..." rows="4" cols="35"></textarea>
+                            <div>
+                                <button type="submit" class="submitBtn">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="mapouter compmap">
+                    <div class="gmap_canvas2">
+                        <iframe class="gmap_iframe2" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                                src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=world trade center manila&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- row end tag -->
+    </div> <!-- d-flex end tag -->
+
+</main>

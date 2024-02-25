@@ -1,0 +1,19 @@
+/* Admin Portal Login Title */
+.admin-portal-title {
+    margin-bottom: 50px;
+    text-align: center;
+    color: white;
+}
+/* Login Bold Text */
+.login-bold {
+    color: #283B62;
+}
+.card {
+    margin: 30px;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .card {
+        margin: 30px;
+    }
+}

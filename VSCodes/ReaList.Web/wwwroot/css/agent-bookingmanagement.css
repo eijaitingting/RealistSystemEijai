@@ -1,0 +1,87 @@
+.text-header {
+    color: #283B62;
+    font-weight: bold;
+    text-align: left;
+}
+/* semi-nav */
+a.nav2 {
+  color: #8591A9;
+  font-weight: bold;
+}
+a.nav2:hover {
+  color: #283B62;
+  font-weight: bold;
+}
+a.nav2.active {
+  color: #283B62;
+  font-weight: bold;
+}
+a.nav2.active:hover {
+  color: hsl(220, 17%, 59%);
+  font-weight: bold;
+}
+
+
+.myBookings {
+    color: #283B62;
+    display: flex;
+    justify-content: start;
+}
+/* Bookings Nav */
+#home-tab {
+    color: #283B62;
+    
+}
+/* -----Recent Bookings Tab----- */
+#recent-tab {
+    color: #283B62;
+    font-weight: bold;
+}
+/* All Action Buttons */
+.btn-sm {
+    margin-right: 5px;
+    width: 50%;
+}
+/* Action Buttons Flex */
+.container-button {
+    display: flex;
+}
+/* Action Buttons */
+.action-btns {
+    width: 200px;
+}
+/* -----Approved Bookings Tab----- */
+#approved-tab {
+    color: #283B62;
+    font-weight: bold;
+}
+/* Approved Action Column Width */
+td.approved-action-buttons {
+    width: 10px;
+}
+/* -----Reschedule Bookings Tab----- */
+#reschedule-tab {
+    color: #283B62;
+    font-weight: bold;
+}
+/* -----Cancelled Bookings Tab----- */
+#cancelled-tab {
+    color: #283B62;
+    font-weight: bold;
+}
+/* Sticky Top */
+.sticky-top {
+    background-color: white;
+}
+/* Reschedule Button */
+.btn-sm.reschedule:hover {
+    color: white;
+    background-color: rgb(175, 175, 8);
+    border: rgb(175, 175, 8);
+}
+.btn-sm.reschedule {
+    background-color: rgb(226, 226, 82);
+    color: white;
+    border: rgb(175, 175, 8);
+}
+

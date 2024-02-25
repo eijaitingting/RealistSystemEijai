@@ -1,0 +1,26 @@
+.container.h-100 {
+    float: right;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.account.selection.container {
+    margin-top: 4%;
+}
+
+.selection.container {
+    margin-top: 2%;
+}
+
+.card-body.p-5.text-center {
+    background: rgba(255, 255, 255, 0.507);
+}
+
+.card.text-black {
+    background: transparent;
+    margin-bottom: 15%;
+}
+
+/*Register Header*/
+p.text-center.h1.fw-bold.mb-5 { 
+    color: #283B62;
+}

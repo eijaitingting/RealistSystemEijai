@@ -1,0 +1,88 @@
+6/2/2023 11:58:41 PM	This log contains information about the import schema operation into project 'ReaList.DB' on computer 'DESKTOP-HT63NRU' by user 'Acer'.
+6/2/2023 11:58:41 PM	Import of database schema has started.
+6/2/2023 11:58:50 PM	Gathering database credentials
+6/2/2023 11:58:50 PM	Gathering database options
+6/2/2023 11:58:50 PM	Gathering generic database scoped configuration option
+6/2/2023 11:58:50 PM	Gathering users
+6/2/2023 11:58:50 PM	Gathering roles
+6/2/2023 11:58:50 PM	Gathering application roles
+6/2/2023 11:58:50 PM	Gathering role memberships
+6/2/2023 11:58:50 PM	Gathering filegroups
+6/2/2023 11:58:50 PM	Gathering full-text catalogs
+6/2/2023 11:58:50 PM	Gathering assemblies
+6/2/2023 11:58:50 PM	Gathering certificates
+6/2/2023 11:58:50 PM	Gathering asymmetric keys
+6/2/2023 11:58:50 PM	Gathering symmetric keys
+6/2/2023 11:58:50 PM	Gathering encrypted symmetric keys
+6/2/2023 11:58:50 PM	Gathering schemas
+6/2/2023 11:58:50 PM	Gathering XML schema collections
+6/2/2023 11:58:50 PM	Gathering user-defined data types
+6/2/2023 11:58:50 PM	Gathering user-defined types
+6/2/2023 11:58:50 PM	Gathering table types
+6/2/2023 11:58:50 PM	Gathering unique keys for table types
+6/2/2023 11:58:50 PM	Gathering primary keys for table types
+6/2/2023 11:58:52 PM	Gathering indexes for table types
+6/2/2023 11:58:52 PM	Gathering check constraints for table types
+6/2/2023 11:58:52 PM	Gathering default constraints for table types
+6/2/2023 11:58:52 PM	Gathering partition functions
+6/2/2023 11:58:52 PM	Gathering partition schemes
+6/2/2023 11:58:52 PM	Gathering functions
+6/2/2023 11:58:52 PM	Gathering encrypted functions
+6/2/2023 11:58:52 PM	Gathering aggregates
+6/2/2023 11:58:52 PM	Gathering procedures
+6/2/2023 11:58:53 PM	Gathering encrypted procedures
+6/2/2023 11:59:03 PM	Gathering tables
+6/2/2023 11:59:03 PM	Gathering primary keys
+6/2/2023 11:59:03 PM	Gathering unique constraints
+6/2/2023 11:59:03 PM	Gathering foreign keys
+6/2/2023 11:59:03 PM	Gathering default constraints
+6/2/2023 11:59:03 PM	Gathering check constraints
+6/2/2023 11:59:03 PM	Gathering views
+6/2/2023 11:59:03 PM	Gathering encrypted views
+6/2/2023 11:59:03 PM	Gathering indexes
+6/2/2023 11:59:03 PM	Gathering statistics
+6/2/2023 11:59:03 PM	Gathering full-text index stoplists
+6/2/2023 11:59:03 PM	Gathering search property lists
+6/2/2023 11:59:03 PM	Gathering search properties
+6/2/2023 11:59:03 PM	Gathering full-text indexes
+6/2/2023 11:59:03 PM	Gathering column store indexes
+6/2/2023 11:59:03 PM	Gathering spatial indexes
+6/2/2023 11:59:03 PM	Gathering XML indexes
+6/2/2023 11:59:03 PM	Gathering Selective XML indexes
+6/2/2023 11:59:03 PM	Gathering encrypted triggers
+6/2/2023 11:59:03 PM	Gathering triggers
+6/2/2023 11:59:03 PM	Gathering encrypted and clr ddl triggers
+6/2/2023 11:59:03 PM	Gathering ddl triggers
+6/2/2023 11:59:03 PM	Creating edge constraints
+6/2/2023 11:59:03 PM	Gathering synonyms
+6/2/2023 11:59:03 PM	Gathering defaults
+6/2/2023 11:59:03 PM	Gathering data constraint uddt bindings
+6/2/2023 11:59:03 PM	Gathering rules
+6/2/2023 11:59:03 PM	Gathering data constraint uddt bindings
+6/2/2023 11:59:03 PM	Gathering message types
+6/2/2023 11:59:03 PM	Gathering queues
+6/2/2023 11:59:03 PM	Gathering contracts
+6/2/2023 11:59:03 PM	Gathering services
+6/2/2023 11:59:03 PM	Gathering event notifications
+6/2/2023 11:59:03 PM	Gathering remote service bindings
+6/2/2023 11:59:03 PM	Gathering broker priorities
+6/2/2023 11:59:03 PM	Gathering signatures
+6/2/2023 11:59:03 PM	Gathering compression options
+6/2/2023 11:59:03 PM	Gathering sequence types
+6/2/2023 11:59:03 PM	Gathering security policies
+6/2/2023 11:59:03 PM	Gather column encryption keys
+6/2/2023 11:59:03 PM	Gathering column master keys
+6/2/2023 11:59:03 PM	Gathering external data sources
+6/2/2023 11:59:03 PM	Gathering external file formats
+6/2/2023 11:59:03 PM	Gathering external tables
+6/2/2023 11:59:03 PM	Gathering XML index compression options
+6/2/2023 11:59:03 PM	Gathering extended properties
+6/2/2023 11:59:04 PM	Gathering assemblies
+6/2/2023 11:59:04 PM	Gathering credentials
+6/2/2023 11:59:04 PM	Gathering logins
+6/2/2023 11:59:04 PM	Gathering server audits
+6/2/2023 11:59:05 PM	Scanning project for duplicate elements
+6/2/2023 11:59:06 PM	Finished duplicate element processing
+6/2/2023 11:59:07 PM	Finished importing database.
+6/2/2023 11:59:07 PM	A summary of the import was saved to the following location: C:\Users\Acer\source\repos\ReaList\ReaList.DB\Import Schema Logs\ReaList.DB_20230602035841.log
+6/2/2023 11:59:07 PM	Click Finish to continue...

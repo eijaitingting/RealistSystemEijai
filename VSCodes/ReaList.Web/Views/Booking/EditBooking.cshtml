@@ -1,0 +1,44 @@
+﻿@model ReaList.Library.Model.Bookings.BookingModel
+
+@{
+    ViewData["Title"] = "Book";
+}
+
+<h1>Edit Booking Schedule</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateBooking" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="BookingID" class="form-control" type="hidden" />
+            </div>
+            <div class="form-group">
+                <label asp-for="VisitDate" class="control-label"></label>
+                <input type="date" asp-for="VisitDate" class="form-control" />
+                <span asp-validation-for="VisitDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VisitTime">Property Type</label>
+                <select asp-for="VisitTime" name="VisitTime" class="form-control">
+                    <option value="7:00 AM - 8:30 AM">7:00 AM - 8:30 AM</option>
+                    <option value="9:00 AM - 10:30 AM">9:00 AM - 10:30 AM</option>
+                    <option value="11:00 AM - 12:30 AM">11:00 AM - 12:30 AM</option>
+                    <option value="1:00 PM - 2:30 PM">1:00 PM - 2:30 PM</option>
+                    <option value="3:00 PM - 4:30 PM">3:00 PM - 4:30 PM</option>
+                    <option value="5:00 PM - 6:30 PM">5:00 PM - 6:30 PM</option>
+                    <option value="7:00 PM - 8:30 PM">7:00 PM - 8:30 PM</option>
+                </select>
+                <span asp-validation-for="VisitTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="DateUpdated" class="form-control" type="hidden" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Update Booking" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

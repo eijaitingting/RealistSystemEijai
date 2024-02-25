@@ -1,0 +1,78 @@
+﻿@model List<ReaList.Library.Model.Properties.PropertyModel>
+
+@{
+    ViewData["Title"] = "Listings";
+}
+
+<h1 class="mt-3">LISTINGS</h1>
+<p><a asp-action="AddProperty" class="btn btn-primary float-end">Add Property</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Property Name
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Agent Name
+            </th>
+            <th>
+                Agent Type
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var property in Model)
+        {
+            <tr>
+                <td>
+                    @property.PropertyID
+                </td>
+                <td>
+                    @property.PropertyName
+                </td>
+                <td>
+                    @property.PropertyCategoryName
+                </td>
+                <td>
+                    @property.PropertyTypeName
+                </td>
+                <td>
+                    @property.TotalPrice
+                </td>
+                <td>
+                    @property.Location
+                </td>
+                <td>
+                    @property.AgentName
+                </td>
+                <td>
+                    @property.AgentType
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = property.PropertyID }) |
+                    @Html.ActionLink("Details", "Details", new { id = property.PropertyID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = property.PropertyID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

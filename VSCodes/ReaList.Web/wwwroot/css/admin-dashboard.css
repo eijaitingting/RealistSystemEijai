@@ -1,0 +1,110 @@
+.nav-item {
+    font-weight: bold;
+}
+/* Admin Name */
+.admin-name {
+    color: #283B62;
+    font-weight: bold;
+}
+/* Nav Link CSS */
+button.nav-link {
+    color: #283B62;
+    background-color: #e4e4e4;
+    border-radius: 1px;
+    margin: 5px;
+}
+/* Agents Tab */
+#agents-tab {
+    color: #283B62;
+}
+/* Customers Tab */
+#customers-tab {
+    color: #283B62;
+}
+/* Review Listings Tab */
+#reviewlistings-tab {
+    color: #283B62;
+}
+/* Subscriptions Tab */
+#subscriptions-tab {
+    color: #283B62;
+}
+/* Complaints Tab */
+#complaints-tab {
+    color: #283B62;
+}
+/* Testimonials Tab */
+#testimonials-tab {
+    color: #283B62;
+}
+/* Notifications Tab */
+#notifications-tab {
+    color: #283B62;
+}
+/* All Action Buttons */
+.btn-sm {
+    margin-right: 5px;
+    width: 50%;
+}
+/* Action Buttons Flex */
+.container-button {
+    display: flex;
+}
+/* Admin Portal Header */
+.adminPortal {
+    color: #283B62;
+}
+/* Truncate Agent Complaints, Customer Complaints */
+.text-truncate {
+    max-width: 250px;
+}
+div.container.sticky-top {
+    background-color: white;
+}
+/* Bold Header in Modals */
+p.bold-header {
+    font-weight: bold;
+}
+/* Deactivate Button Color */
+.btn-sm.deactivate:hover {
+    color: white;
+    background-color: rgb(175, 175, 8);
+}
+.btn-sm.deactivate {
+    background-color: rgb(226, 226, 82);
+    color: white;
+}
+/* Bold Span */
+.bold-span {
+    font-weight: bold;
+}
+/* Action Buttons */
+.action-btns {
+    width: 10px;
+}
+/* Testimonial Agent Title (static text)*/
+.agentTitle::before {
+    content: "Agent ";
+}
+.testimonyAction::before {
+    content: "has written a testimony";
+}
+.testimonialText::before {
+    content: "With supporting text below as a natural lead-in to additional content.";
+}
+.complaintAction::before {
+    content: "has sent a complaint about ";
+}
+/* Card Image */
+.card_img {
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.card_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

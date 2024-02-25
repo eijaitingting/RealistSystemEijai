@@ -1,0 +1,6 @@
+﻿CREATE PROCEDURE dbo.sp_GetAllTestimonials
+AS
+BEGIN
+SELECT * FROM Testimonies
+END
+RETURN 0

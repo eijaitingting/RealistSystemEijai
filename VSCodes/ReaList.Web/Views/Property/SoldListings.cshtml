@@ -1,0 +1,199 @@
+﻿@model ReaList.Library.Model.RealistsVM
+
+@{
+    ViewData["Title"] = "SoldListings";
+    var sub = Model.subscriptionList
+    .Where(x => x.AgentID == Model.agentAccountModel.AgentID && x.IsActive && x.ExpiryDate > DateTime.Now)
+    .FirstOrDefault();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sold Listings</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/agent-listingmgt_sold.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap Font and Icons 1.3.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="d-flex container justify-content-center">
+            <div class="row g-3 col-md-12">
+
+                <div class="container">
+                    <div class="row mt-5">
+
+                        <!-- text header -->
+                        <div class="container col-md-6">
+                            <h3 class="text-header">Sold Listings</h3>
+                        </div>
+                        <div class="container col-md-6 add-new-button">
+                            @if (sub != null)
+                            {
+                                <a asp-action="AddProperty" class="btn add-new" role="button">
+                                    <i class="bi bi-plus" aria-hidden="true"></i><b>Add New</b>
+                                </a>
+                            }
+                            else
+                            {
+                                @if (Model.propertyList.Count < 3)
+                                {
+                                    <a asp-action="AddProperty" class="btn add-new" role="button">
+                                        <i class="bi bi-plus" aria-hidden="true"></i><b>Add New</b>
+                                    </a>
+                                }
+                            }
+                        </div>
+
+                        <!-- semi-nav -->
+                        <div class="container semi-nav p-0 mt-2 mb-5">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a asp-action="ActiveListings" class="nav-link nav2">Active Listings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="SoldListings" class="nav-link nav2 active">Sold Listings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="RentedListings" class="nav-link nav2">Rented Listings</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        @foreach (var property in Model.propertyList)
+                        {
+                            <div class="col-md-4">
+                                <div class="card">
+
+                                    <div class="agent">
+                                        <img src="~/UploadedFiles/@property.MainPhoto" alt="Agent Image">
+                                        <div class="details">
+                                            <div class="name">@property.AgentName</div>
+                                            <div class="designation-date p-0">
+                                                <div class="designation">@property.AgentType</div>
+                                                <!--<div class="published-date">Published on: 12/01/22</div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="property">
+                                        <img src="~/UploadedFiles/@property.MainPhoto" alt="Property Image">
+                                        <div class="ribbon @(property.PropertyCategoryName == "For Rent" ? "rent" : property.PropertyCategoryName == "For Sale" ? "sale" : "")">@property.PropertyCategoryName</div>
+
+                                        <!-- <div class="ribbon sale">@property.PropertyCategoryName</div> -->
+                                        @Html.ActionLink("Mark as Active", "MarkProperty", new { id = property.PropertyID }, new { @class = "mark-as-active-button" })
+                                        <!-- <button class="mark-as-sold-button">Mark as Sold</button> -->
+                                        <!-- <a href="/agent-editlistingform.html" class="edit-button" role="button">
+                                            <i class="bi bi-pencil-fill" aria-hidden="true"></i><b></b>
+                                        </a> -->
+                                    </div>
+
+                                    <div class="property-details">
+                                        <div class="property-name">@property.PropertyName<span class="price">₱@property.TotalPrice</span></div>
+                                        <div class="address">
+                                            <span class="ribbon @(property.PropertyTypeName == "House and Lot" ? "house" : property.PropertyTypeName == "Condominium" ? "condo" : property.PropertyTypeName == "Apartment" ? "apart" : "")">@property.PropertyTypeName</span>
+                                            <!-- <span class="ribbon house">@property.PropertyTypeName</span> -->
+                                        </div>
+                                        <div class="address">@property.Location</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+@*<!---Datatable initialization->*@
+<script>
+    var date = new Date();
+    var module = "Listings For Sale";
+    var table = $('#soldListings').DataTable({
+        "searching": true,
+        "scrollX": false,
+        "bInfo": false,
+        "paging": true,
+        colReorder: false,
+        responsive: false,
+        buttons: {
+            buttons: [
+                {
+                    extend: 'print', className: 'btn btn-success', title: '',
+                    message: function () {
+                        return '<br/>' + module + ' Report<br/>For the Period Ending<br/>' + date.toDateString();
+                    },
+                    footer: true,
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6, 7],
+                        search: 'applied',
+                        order: 'applied',
+                    },
+                    customize: function (win) {
+                        $(win.document.body)
+                            .css('font-size', '15pt')
+                            .css('text-align', 'center')
+                            .prepend('<hr>');
+                    }
+                },
+                {
+                    extend: 'excel', className: 'btn btn-success',
+                    title: module + ' Report - ',
+                    messageTop: 'Reports | ' + module + ' Reports As of ' + date.toDateString().split(' ').slice(1).join(' '),
+                    footer: true,
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6, 7],
+                    },
+                    customize: function (xlsx) {
+                        var sheet = xlsx.xl.worksheets['sheet1.xml'];
+
+                        // jQuery selector to add a border
+                        $('row c[r^="A"]', sheet).attr('s', '50');
+                        $('row:nth-child(2) c:nth-child(1)', sheet).attr('s', '51');
+                        $('row:nth-child(1) c:nth-child(1)', sheet).attr('s', '51');
+
+                        $('row c[r^="B"]', sheet).attr('s', '50');
+                        $('row c[r^="C"]', sheet).attr('s', '50');
+                        $('row c[r^="D"]', sheet).attr('s', '50');
+                    }
+                },
+                {
+                    extend: 'pdf', className: 'btn btn-primary',
+                    title: module + ' Report',
+                    messageTop: 'For the Period Ending ' + date.toDateString(),
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6, 7],
+                        search: 'applied',
+                        order: 'applied',
+                    },
+                    customize: function (doc) {
+                        doc.styles.tableHeader.fontSize = 12;
+                        doc.styles.title.fontSize = 15;
+                        doc.styles.title.alignment = 'center';
+                        doc.content[1].alignment = 'center';
+                    }
+                }
+            ]
+        },
+    });
+    $('#appendhere').html('');
+    table.buttons().container().appendTo('#appendhere');
+</script>

@@ -1,0 +1,759 @@
+/* carousel */
+img.d-block {
+    width: 800px;
+    height: 400px;
+}
+
+/* property info */
+.location {
+    font-size: 14px;
+}
+.bi-geo-alt-fill {
+    color: red;
+    font-size: 14px;
+} 
+.house-name {
+    color: #283B62;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+.published-date {
+    margin-left: 565px;
+    font-size: 14px;
+}
+.bookBtn {
+    background-color: rgb(59, 89, 152, 0.85);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    justify-content: center;
+    border-radius: 15px;
+    border: none;
+    font-size: 18px;
+    text-decoration: none;
+}
+.bookBtn:hover {
+    background-color: #FFFFFF;
+    color: #3B5998;
+    border: 3px solid #3B5998;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    justify-content: center;
+}
+
+/* modal book property */
+#modalTitleId {
+    text-align: center;
+    color: #283B62;
+    font-weight: 700;
+    font-size: 32px;
+}
+#datetimepicker input {
+    border: 1px solid #283B62;
+    margin-bottom: 15px;
+}
+.timeSelect {
+    height: 38px;
+    border: 1px solid #283B62;
+    border-radius: 5px;
+    padding: 5px 0 0 5px;
+}
+.bookBtnMdl {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #283B62;
+    border: 2px solid #283B62;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+.bookBtnMdl:hover {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #fff;
+    border: 2px solid #283B62;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #283B62;
+}
+
+/* popup booking success and contact agent success modal */
+.contactAgentSuccess h1, .bookSchedSuccess h1 {
+    color: #203354;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px 20px 0 20px;
+}
+.contactAgentSuccess p, .bookSchedSuccess p {
+    color: #8591A9;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.contactAgentSuccess button, .bookSchedSuccess button {
+    background: #283B62;
+    border-radius: 10px;
+    width: 140px;
+    height: 45px;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+}
+.contactAgentSuccess button:hover, .bookSchedSuccess button:hover {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 140px;
+    height: 45px;
+    border: 2px solid #283B62;
+    color: #283B62;
+    font-weight: 700;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* overview */
+.container.overview {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 7.8em;
+    background-color: rgba(195, 203, 217, 0.5);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.title-overview {
+    color: #283B62;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+p.overview {
+    font-size: 14px;
+    text-align: justify;
+    padding-bottom: 7px;
+}
+
+/* property info */
+.container.prop-info {
+    padding: 20px 20px 20px 20px;
+    background: rgba(195, 203, 217, 0.25);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.title-prop {
+    font-weight: 700;
+    font-size: 16px;
+    color: rgba(255, 0, 0, 0.65);
+    margin-bottom: 2px;
+}
+.price {
+    color: #2654B2;
+    font-size: 24px;
+    font-weight: 700;
+}
+.address {
+    font-size: 18px;
+    font-weight: 500;
+}
+.title-proptype {
+    color: #283B62;
+    font-weight: 700;
+    font-size: 16px;
+}
+.house {
+    display: inline-block;
+    background: rgba(132, 172, 255, 0.85);
+    padding: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+div.other-info {
+    justify-content: center;
+    align-items: center;
+    background: #8591A9;
+    border-radius: 10px;
+    padding: 7px;
+    margin-bottom: -10px;
+}
+svg {
+    width: 18px;
+    height: 18px;
+    fill: #FFFFFF;
+    padding-right: 2px;
+}
+.bi-square {
+    color: #FFFFFF;
+    padding-right: 2px;
+}
+.nobeds, .nobaths, .sqm {
+    font-size: 15px;
+    color: #FFFFFF
+}
+
+/* amenities */
+.container.amenities {
+    padding: 2px 20px 5em 20px;
+    background: rgba(195, 203, 217, 0.5);
+    margin-top: -39px;
+    margin-bottom: -3em;
+}
+.title-amenities {
+    color: #283B62;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+ul.amenities {
+    font-size: 14px;
+}
+
+/* inquire */
+.inquire {
+    vertical-align: middle;
+}
+div.inquire {
+    background: #FFFFFF;
+    border: 1px solid #8591A9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 0;
+}
+p.inquire {
+    font-weight: 700;
+    font-size: 22px;
+    align-items: center;
+    text-align: center;
+    background: #283B62;
+    color: #FFFFFF;
+    border-radius: 10px 10px 0px 0px;
+}
+.agent-info {
+  overflow: hidden; 
+}
+.agent-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+  object-fit: cover;
+}
+.agent-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+.linkAgentsProf {
+    text-decoration: none;
+    color: #203354;
+}
+.agent-desig {
+    color: #203354;
+    font-size: 12px;
+}
+#cust-name, #cust-cont, #cust-email {
+    margin: 10px 0 0 0;
+    width: 380px;
+    margin-left: 17px;
+}
+#cust-mess {
+    margin: 10px 0 0 0;
+    width: 380px;
+    height: 70px;
+    margin-left: 17px;
+    border: 1px solid #8591A9;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.cellno {
+    margin: 10px 0 10px 0;
+    width: 380px;
+    margin-left: 17px;
+    font-weight: bold;
+    border: 1px solid #8591A9;
+    border-radius: 5px;
+    height: 40px;
+    padding: 5px 0 0 10px;
+}
+.showno a{
+    margin-left: 200px;
+    text-decoration: none;
+}
+.contactBtn {
+    background: rgba(59, 89, 152, 0.7);
+    border-style: none;
+    color: #FFFFFF;
+    width: 380px;
+    height: 30px;
+    border-radius: 3px;
+    margin: 5px 0 10px 17px;
+}
+.contactBtn:hover {
+    background: #203354;
+    border-style: none;
+    color: #FFFFFF;
+}
+.before-contact {
+    color: #666666;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    margin: 0 30px 10px 50px;
+    padding-right: 15px;
+}
+
+/* developer info */
+.container.devinfo {
+    padding: 10px 20px 22em 20px;
+    background-color: rgba(195, 203, 217, 0.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.title-devinfo {
+    color: #283B62;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+p.devinfo {
+    font-size: 14px;
+    text-align: justify;
+}
+.devlogo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* features */
+.title-features {
+    color: #203354;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: -13em;
+    margin-bottom: 3px;
+}
+.featrow1, .featrow2, .featrow3 {
+    color: rgba(40, 59, 98, 0.75);
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* virtual tour */
+.title-virtour {
+    color: #203354;
+    font-weight: 700;
+    font-size: 32px;
+    margin-top: 20px;
+    text-align: center;
+}
+.virtour-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.virtour {
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 40px;
+}
+
+/* property location */
+.title-proploc {
+    font-weight: 700;
+    font-size: 24px;
+    color: #203354;
+    margin-bottom: 3px;
+}
+.proploc {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* map */
+.proploc-map {
+    position: relative;
+    text-align: right;
+    width: 850px;
+    height: 430px;
+    margin-bottom: 80px;
+}
+.gmap_canvas1 {
+    overflow: hidden;
+    background: none!important;
+    width: 850px;
+    height: 430px;
+}
+.gmap_iframe1 {
+    width: 850px!important;
+    height: 430px!important;
+}
+
+/* neighborhood rating */
+div.neighRate {
+    margin-top: -30em;
+}
+.title-neighrate {
+    font-weight: 700;
+    font-size: 24px;
+    color: #203354;
+    text-align: center;
+    margin-bottom: 3px;
+}
+.title-totarea {
+    color: rgba(30, 48, 84, 0.8);
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+.averating {
+    color: #FDD836;
+    text-align: center;
+    font-weight: 700;
+    font-size: 64px;
+    margin-top: -6.5em;
+}
+.sub-rating {
+    color: #FDD836;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: -25px;
+    margin-bottom: 5px;
+}
+.rating {
+    width: 208px;
+    height: 40px;
+    margin: 0 auto 30px;
+}
+.rating label {
+    float: right;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.rating label:not(:first-of-type) {
+    padding-right: 2px;
+}
+.rating label:before {
+    content: "\2605";
+    font-size: 42px;
+    color: #ccc;
+    line-height: 1;
+}
+.rating input {
+    display: none;
+}
+.rating input:checked ~ label:before, .rating:not(:checked) > label:hover:before, .rating:not(:checked) > label:hover ~ label:before {
+    color: #f9df4a;
+}
+.rate-road {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* star rating */
+.elements {
+    width: 208px;
+    height: 40px;
+    margin: 0 auto 0 -15px;
+}
+.elements label {
+    float: right;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.elements label:not(:first-of-type) {
+    padding-right: 2px;
+}
+.elements label:before {
+    content: "\2605";
+    font-size: 27px;
+    color: #ccc;
+    line-height: 1;
+}
+.elements input {
+    display: none;
+}
+.elements input:checked ~ label:before, .elements:not(:checked) > label:hover:before, .elements:not(:checked) > label:hover ~ label:before {
+    color: #f9df4a;
+}
+
+/* contact us */
+.reachus, .followus {
+    margin-top: 50px;
+}
+.title-reachus, .title-followus {
+    color: #203354;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+}
+p.title-sales, p.title-admin, p.title-custcare {
+    color: #203354;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 1px;
+}
+p.sales-email, p.admin-email, p.customer-email {
+    color: #203354;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+.socmed {
+    text-align: center;
+}
+.bi-facebook, .bi-twitter, .bi-instagram {
+    font-size: 60px;
+    padding: 5px;
+}
+.compadd {
+    color: #203354;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* company map (contact us map) */
+.compmap {
+    position: relative;
+    text-align: right;
+    width: 600px;
+    height: 300px;
+    margin: -170px 0 0 5px;
+}
+.gmap_canvas2 {
+    overflow: hidden;
+    background: none!important;
+    width: 600px;
+    height: 300px;
+}
+.gmap_iframe2 {
+    width: 600px!important; 
+    height: 300px!important;
+}
+
+/* contact us */
+.title-contactus {
+    color: #283B62;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 50px;
+}
+.contactus {
+    margin-bottom: -75px;
+}
+.form-group label {
+    font-weight: 300;
+    font-size: 16px;
+}
+.form-group input, textarea {
+    outline: 0;
+    border-width: 0 0 4px;
+    border-radius: 0;
+    border-bottom: 2px solid #000000;
+}
+
+/* submit button */
+.submitBtn {
+    background-color: #283B62;
+    border-color: #283B62;
+    color: #FFFFFF;
+    width: 280px;
+    height: 50px;
+    position: absolute;
+    border: #283B62;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.submitBtn:hover {
+    background-color: #FFFFFF;
+    border-color: #283B62;
+    color: #283B62;
+    width: 280px;
+    height: 50px;
+    position: absolute;
+    border: #283B62;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+@media only screen and (max-width: 900px) and (min-width: 400px) { 
+    body {
+        overflow-x: hidden;
+    }
+
+    /* carousel */
+    img.d-block {
+    width: 300px;
+    height: 200px;
+    }
+
+    /* property info */
+    .house-name {
+        margin-left: 25px;
+    }
+    .bi-geo-alt-fill {
+        margin-left: 25px;
+    }
+    .published-date {
+        margin-left: 110px;
+    }
+    .bookBtn {
+        width: 90%;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+    .bookBtn:hover {
+        width: 90%;
+    }
+
+    /* overview */
+    .container.overview {
+        border-radius: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    /* amenities */
+    .container.amenities {
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 20px;
+    }
+
+    /* agent contact inquire */
+    div.inquire {
+        margin-top: -25px;
+    }
+    #cust-name, #cust-cont, #cust-email, #cust-mess, .cellno, .contactBtn, .contactBtn:hover {
+        width: 355px;
+    }
+    .showno a{
+        margin-left: 180px;
+    }
+
+    /* developer information */
+    .container.devinfo {
+        margin-top: 30px;
+        border-radius: 10px;
+        padding-top: 20px;
+    }
+
+    /* features */
+    .title-features {
+        margin-top: 20px;
+        text-align: start;
+    }
+
+    /* virtual tour */
+    .virtour {
+        margin-bottom: 20px;
+    }
+
+    /* property location */
+    .proploc {
+        margin-bottom: 50px;
+    }
+
+    /* map */
+    .proploc-map {
+        position: relative;
+        text-align: center;
+        width: 385px;
+        height: 150px;
+        margin-top: -245px;
+    }
+    .gmap_canvas1 {
+        overflow: hidden;
+        background: none!important;
+        width: 385px;
+        height: 150px;
+    }
+    .gmap_iframe1 {
+        width: 385px!important;
+        height: 150px!important;
+    }
+
+    div.neighRate {
+        margin-top: 130px;
+    }
+
+    /* star rating */
+    .elements {
+        margin-left: 54px;
+        margin-bottom: 5px;
+    }
+    .rate-road, .rate-safety, .rate-clean, .rate-parking, .rate-traffic, .rate-school, .rate-resto {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    /* company map (contact us map) */
+    .compmap {
+        position: relative;
+        text-align: center;
+        width: 300px;
+        height: 200px;
+        margin: -870px 0 100px 47px;
+    }
+    .gmap_canvas2 {
+        overflow: hidden;
+        background: none!important;
+        width: 300px;
+        height: 200px;
+    }
+    .gmap_iframe2 {
+        width: 300px!important; 
+        height: 200px!important;
+    }
+
+    /* contact us */
+    .followus {
+        margin-top: 20px;
+    }
+    .contactus {
+        margin-top: 250px;
+        margin-bottom: 100px;
+    }
+    #contactus {
+        margin-top: 0;
+    }
+    .title-contactus {
+        color: #283B62;
+        font-weight: 700;
+        font-size: 32px;
+        text-align: center;
+        margin-top: 0;
+    }
+    textarea {
+        width: 365px;
+    }
+    .submitBtn {
+        margin-top: 30px;
+        width: 365px;
+    }
+    
+}

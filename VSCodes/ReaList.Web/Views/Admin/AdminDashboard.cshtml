@@ -1,0 +1,1005 @@
+﻿@model ReaList.Library.Model.RealistsVM
+@{
+    ViewData["Title"] = "Home";
+}
+
+<main>
+    <div class="adminbody m-5">
+        <div class="container sticky-top">
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="adminPortal pt-3 pb-3 ">ADMIN PORTAL</h2>
+                </div>
+            </div>
+            <ul class="nav nav-tabs justify-content-center" id="main-Tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="agents-tab" data-bs-toggle="tab" data-bs-target="#agents"
+                            type="button" role="tab" aria-controls="agents" aria-selected="true">
+                        AGENTS
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="customers-tab" data-bs-toggle="tab" data-bs-target="#customers"
+                            type="button" role="tab" aria-controls="customers" aria-selected="false">
+                        CUSTOMERS
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reviewlistings-tab" data-bs-toggle="tab"
+                            data-bs-target="#reviewlistings" type="button" role="tab" aria-controls="reviewlistings"
+                            aria-selected="false">
+                        REVIEW LISTINGS
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="subscriptions-tab" data-bs-toggle="tab"
+                            data-bs-target="#subscriptions" type="button" role="tab" aria-controls="subscriptions"
+                            aria-selected="false">
+                        SUBSCRIPTIONS
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="complaints-tab" data-bs-toggle="tab" data-bs-target="#complaints"
+                            type="button" role="tab" aria-controls="complaints" aria-selected="false">
+                        COMPLAINTS
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="testimonials-tab" data-bs-toggle="tab"
+                            data-bs-target="#testimonials" type="button" role="tab" aria-controls="testimonials"
+                            aria-selected="false">
+                        TESTIMONIALS
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="notifications-tab" data-bs-toggle="tab"
+                            data-bs-target="#notifications" type="button" role="tab" aria-controls="notifications"
+                            aria-selected="false">
+                        NOTIFICATIONS
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content pt-3" id="main-tab-content">
+            <!-- Agents Tab -->
+            <div class="table-responsive tab-pane fade show active" id="agents" role="tabpanel"
+                 aria-labelledby="agents-tab">
+                <table id="agentsTable" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="agent-all-cb" name="agent-all-cb"></th>
+                            <th>#</th>
+                            <th>NAME</th>
+                            <th>EMAIL</th>
+
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.agentAccountsList)
+                        {
+                            <tr>
+
+                                <td><input type="checkbox" id="#" /></td>
+                                <td class="list-number">@item.AgentID</td>
+                                <td class="agent-name">@(item.FirstName + ' ' + item.LastName)</td>
+                                <td class="agent-email">@item.Email</td>
+
+                                <td class="action-btns">
+                                    <div class="container-button">
+                                        <!-- Details Button -->
+                                        <button type="button" class="btn btn-success btn-sm details"
+                                                data-bs-toggle="modal" data-bs-target="#agent-details-Modal">
+                                            Details
+                                        </button>
+                                        <!-- Details Modal -->
+                                        <div class="modal fade" id="agent-details-Modal" tabindex="-1"
+                                             aria-labelledby="agent-details-ModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="agent-details-ModalLabel">
+                                                            Customer
+                                                            Details
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="bold-header">Name: </p>
+                                                        <p class="customer-name">Ann Culhane</p>
+                                                        <p class="bold-header">Email: </p>
+                                                        <p class="customer-email">blahblah@yahoo.com</p>
+                                                        <p class="bold-header">Verification: </p>
+                                                        <p class="customer-verification">Mulberry House</p>
+                                                        <p class="bold-header">Status: </p>
+                                                        <p class="customer-status">Quezon City</p>
+                                                        <p class="bold-header">Last Login: </p>
+                                                        <p class="customer-last-login">09178239575</p>
+                                                        <p class="bold-header">Joned Date: </p>
+                                                        <p class="customer-joined-date">yeah@yahoo.com</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">
+                                                            Close
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Deactivate Button -->
+                                        <button type="button" class="btn btn-sm deactivate" data-bs-toggle="modal"
+                                                data-bs-target="#agent-deactivate-Modal">
+                                            Deactivate
+                                        </button>
+                                        <!-- Deactivate Modal -->
+                                        <div class="modal fade" id="agent-deactivate-Modal" tabindex="-1"
+                                             aria-labelledby="agent-deactivate-ModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="agent-deactivate-ModalLabel">
+                                                            Deactivate?
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body text-center">
+                                                        <p class="deactivate-question">
+                                                            Are you sure you want to
+                                                            deactivate this account?
+                                                        </p>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-center">
+                                                        <button type="button" class="btn btn-primary"
+                                                                data-bs-dismiss="modal">
+                                                            Yes
+                                                        </button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">
+                                                            No
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Ban Button -->
+                                        <button type="button" class="btn btn-danger btn-sm ban" data-bs-toggle="modal"
+                                                data-bs-target="#customer-ban-Modal">
+                                            Ban
+                                        </button>
+                                        <!-- Ban Modal -->
+                                        <div class="modal fade" id="customer-ban-Modal" tabindex="-1"
+                                             aria-labelledby="customer-ban-ModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="customer-ban-ModalLabel">
+                                                            Deactivate?
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body text-center">
+                                                        <p class="deactivate-question">
+                                                            Are you sure you want to
+                                                            <span class="bold-span">ban </span> this account?
+                                                        </p>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-center">
+                                                        <button type="button" class="btn btn-primary"
+                                                                data-bs-dismiss="modal">
+                                                            Yes
+                                                        </button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">
+                                                            No
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- Customers Tab -->
+            <div class="table-responsive tab-pane fade" id="customers" role="tabpanel"
+                 aria-labelledby="customers-tab">
+                <table id="customersTable" class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="customer-all-cb" name="customer-all-cb"></th>
+                            <th>#</th>
+                            <th>NAME</th>
+                            <th>EMAIL</th>
+                            <th>VERIFICATION</th>
+                            <th>STATUS</th>
+                            <th>LAST LOGIN</th>
+                            <th>JOINED DATE</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.customerAccountsList)
+                        {
+                            <tr>
+
+                                <td><input type="checkbox" id="#" /></td>
+                                <td class="list-number">@item.CustomerID</td>
+                                <td class="agent-name">@(item.FirstName + ' ' + item.LastName)</td>
+                                <td class="agent-email">@item.Email</td>
+                                <td class="action-btns">
+                                    <div class="container-button">
+                                        <!-- Details Button -->
+                                        <button type="button" class="btn btn-success btn-sm details"
+                                                data-bs-toggle="modal" data-bs-target="#detailsModal">
+                                            Details
+                                        </button>
+                                        <!-- Details Modal -->
+                                        <div class="modal fade" id="detailsModal" tabindex="-1"
+                                             aria-labelledby="detailsModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="detailsModalLabel">
+                                                            Customer
+                                                            Details
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="bold-header">Name: </p>
+                                                        <p class="customer-name">Ann Culhane</p>
+                                                        <p class="bold-header">Email: </p>
+                                                        <p class="customer-email">blahblah@yahoo.com</p>
+                                                        <p class="bold-header">Verification: </p>
+                                                        <p class="customer-verification">Mulberry House</p>
+                                                        <p class="bold-header">Status: </p>
+                                                        <p class="customer-status">Quezon City</p>
+                                                        <p class="bold-header">Last Login: </p>
+                                                        <p class="customer-last-login">09178239575</p>
+                                                        <p class="bold-header">Joned Date: </p>
+                                                        <p class="customer-joined-date">yeah@yahoo.com</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">
+                                                            Close
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Deactivate Button -->
+                                        <button type="button" class="btn btn-sm deactivate" data-bs-toggle="modal"
+                                                data-bs-target="#deactivateModal">
+                                            Deactivate
+                                        </button>
+                                        <!-- Deactivate Modal -->
+                                        <div class="modal fade" id="deactivateModal" tabindex="-1"
+                                             aria-labelledby="deactivateModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="deactivateModalLabel">
+                                                            Deactivate?
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body text-center">
+                                                        <p class="deactivate-question">
+                                                            Are you sure you want to
+                                                            deactivate this account?
+                                                        </p>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-center">
+                                                        <button type="button" class="btn btn-primary"
+                                                                data-bs-dismiss="modal">
+                                                            Yes
+                                                        </button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">
+                                                            No
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Ban Button -->
+                                        <button type="button" class="btn btn-danger btn-sm ban" data-bs-toggle="modal"
+                                                data-bs-target="#banModal">
+                                            Ban
+                                        </button>
+                                        <!-- Ban Modal -->
+                                        <div class="modal fade" id="banModal" tabindex="-1"
+                                             aria-labelledby="banModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="banModalLabel">
+                                                            Deactivate?
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body text-center">
+                                                        <p class="deactivate-question">
+                                                            Are you sure you want to
+                                                            <span class="bold-span">ban </span> this account?
+                                                        </p>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-center">
+                                                        <button type="button" class="btn btn-primary"
+                                                                data-bs-dismiss="modal">
+                                                            Yes
+                                                        </button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">
+                                                            No
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- Review Listings Tab -->
+            <div class="table-responsive tab-pane fade" id="reviewlistings" role="tabpanel"
+                 aria-labelledby="reviewlistings-tab">
+                <!-- Sub-Tabs UL-->
+                <ul class="nav nav-tabs sub-tabs" id="sub-Tab" role="tablist">
+                    <!-- Posted Listings Sub-tab -->
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="postedlistings-subtab" data-bs-toggle="tab"
+                                data-bs-target="#postedlistings" type="button" role="tab" aria-controls="postedlistings"
+                                aria-selected="true">
+                            Posted Listings
+                        </button>
+                    </li>
+                   
+                </ul>
+                <!-- Posted Listing Sub-Tab -->
+                <div class="tab-content pt-3" id="posted-subtab-content">
+                    <div class="tab-pane fade show active" id="postedlistings" role="tabpanel"
+                         aria-labelledby="postedlistings-subtab">
+                        <table id="postedlistingsTable" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" id="postedlistings-all-cb"
+                                               name="postedlistings-all-cb">
+                                    </th>
+                                    <th>#</th>
+                                    <th>PROPERTY NAME</th>
+                                    <th>POSTED BY</th>
+                                    <th>CATEGORY</th>
+                                    <th>TYPE</th>
+                                    <th>DATE POSTED</th>
+                                    <th>DATE UPDATED</th>
+                                    <th>STATUS</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var prop in Model.propertyList)
+                                {
+                                    var agent = Model.agentAccountsList.Where(x => x.AgentID == prop.AgentID).FirstOrDefault();
+                                    <tr>
+                                    <td class="list-number">@prop.PropertyID</td>
+                                    <td class="property-name">@prop.PropertyName</td>
+                                    <td class="agent-name">@(agent.FirstName + " "+ agent.LastName )</td>
+                                    <td class="property-category">@prop.PropertyCategoryName</td>
+                                    <td class="property-type">@prop.PropertyTypeName</td>
+                                    <td class="property-date-posted">@prop.DateCreated</td>
+                                        <td class="property-date-updated">@prop.DateCreated</td>
+                                    <td class="property-status">
+                                        <span class="badge rounded-pill bg-secondary">@prop.PropertyStatus</span>
+                                    </td>
+                                    <!-- Action Buttons -->
+                                    <td class="action-btns">
+                                        <div class="container-button">
+                                            <!-- Details Button -->
+                                            <button type="button" class="btn btn-success btn-sm details"
+                                                    data-bs-toggle="modal" data-bs-target="#posted-details-Modal">
+                                                Details
+                                            </button>
+                                            <!-- Details Modal -->
+                                            <div class="modal fade" id="posted-details-Modal" tabindex="-1"
+                                                 aria-labelledby="posted-details-ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fs-5"
+                                                                id="posted-details-ModalLabel">
+                                                                Posted Listing Details
+                                                            </h1>
+                                                            <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p class="bold-header">Property Name: </p>
+                                                            <p class="property-name">House</p>
+                                                            <p class="bold-header">Posted by: </p>
+                                                            <p class="agent-name">Anne Marie</p>
+                                                            <p class="bold-header">Category: </p>
+                                                            <p class="property-category">Quezon City</p>
+                                                            <p class="bold-header">Type: </p>
+                                                            <p class="property-type">09178239575</p>
+                                                            <p class="bold-header">Date Posted: </p>
+                                                            <p class="property-date-posted">culhan@yahoo.com</p>
+                                                            <p class="bold-header">Date Updated: </p>
+                                                            <p class="property-date-updated">
+                                                                2/28/2023 9:30-11:30
+                                                            </p>
+                                                            <p class="bold-header">Status: </p>
+                                                            <p class="property-status">
+                                                                <span class="badge rounded-pill bg-secondary">reviewlistings</span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Delete Button -->
+                                            <button type="button" class="btn btn-danger btn-sm delete"
+                                                    data-bs-toggle="modal" data-bs-target="#posted-delete-Modal">
+                                                Delete
+                                            </button>
+                                            <!-- Delete Modal -->
+                                            <div class="modal fade" id="posted-delete-Modal" tabindex="-1"
+                                                 aria-labelledby="posted-delete-ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fs-5"
+                                                                id="posted-delete-ModalLabel">
+                                                                Delete?
+                                                            </h1>
+                                                            <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body text-center">
+                                                            <p class="deactivate-question">
+                                                                Are you sure you want to
+                                                                <span class="bold-span">delete </span> this listing?
+                                                            </p>
+                                                        </div>
+                                                        <div class="modal-footer justify-content-center">
+                                                            <button type="button" class="btn btn-primary"
+                                                                    data-bs-dismiss="modal">
+                                                                Yes
+                                                            </button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">
+                                                                No
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <!-- Inappropriate Listing Sub-Tab -->
+                
+            </div>
+            <!-- Subscriptions Tab -->
+            <div class="table-responsive tab-pane fade" id="subscriptions" role="tabpanel"
+                 aria-labelledby="subscriptions-tab">
+                <table class="table mt-3" id="subtbl" width="100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Subscription Type Name</th>
+                            <th>Agent Name</th>
+                            <th>Reference NUmber</th>
+                            <th>Start Date</th>
+                            <th>Expiry Date</th>
+                            <th>Status</th>
+                            <th>Photo</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sub in Model.subscriptionList)
+                        {
+                            var agent = Model.agentAccountsList.Where(x => x.AgentID == sub.AgentID).FirstOrDefault();
+                            var subtype = Model.subscriptionTypeList.Where(x => x.SubscriptionTypeID == sub.SubscriptionTypeID).FirstOrDefault();
+                            <tr>
+
+                                <td>@sub.SubscriptionID</td>
+                                <td>@subtype.SubscriptionTypeName</td>
+                                <td>@(agent.FirstName + " " + agent.LastName)</td>
+                                <td>@sub.ReferenceNumber</td>
+                                <td>@sub.StartDate</td>
+                                <td>@sub.ExpiryDate</td>
+                                <td>@sub.IsActive</td>
+                                <td><img src="~/UploadedFiles/@sub.SubPhoto" style="width: 100px; height: 100px;" /></td>
+                                <td class="action-btns">
+                                    <div class="container-button">
+                                        @if (sub.IsActive)
+                                        {
+                                            <form asp-controller="Admin" asp-action="Deactivate" method="post">
+                                                <input asp-for="@sub.SubscriptionID" id="SubscriptionID" class="form-control" type="hidden" />
+                                                <button type="submit" class="btn btn-danger btn-sm details">
+                                                    Deactivate
+                                                </button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                        <form asp-controller="Admin" asp-action="Activate" method="post">
+                                            <input asp-for="@sub.SubscriptionID" id="SubscriptionID" class="form-control" type="hidden" />
+                                            <button type="submit" class="btn btn-success btn-sm details">Activate</button>
+                                        </form>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- Complaints Tab -->
+            <div class="table-responsive tab-pane fade" id="complaints" role="tabpanel"
+                 aria-labelledby="complaints-tab">
+                <!-- Sub-Tabs UL-->
+                <ul class="nav nav-tabs sub-tabs" id="sub-Tab" role="tablist">
+                    <!-- Agent Complaints Sub-tab -->
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="agentcomplaints-subtab" data-bs-toggle="tab"
+                                data-bs-target="#agentcomplaints" type="button" role="tab"
+                                aria-controls="agentcomplaints" aria-selected="true">
+                            Agent Complaints
+                        </button>
+                    </li>
+                    <!-- Customer Complaints Sub-tab -->
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="customercomplaints-subtab" data-bs-toggle="tab"
+                                data-bs-target="#customercomplaints" type="button" role="tab"
+                                aria-controls="customercomplaints" aria-selected="false">
+                            Customer Complaints
+                        </button>
+                    </li>
+                </ul>
+                <!-- Agent Complaints Sub-Tab -->
+                <div class="tab-content pt-3" id="agentcomp-subtab-content">
+                    <div class="tab-pane fade show active" id="agentcomplaints" role="tabpanel"
+                         aria-labelledby="agentcomplaints-subtab">
+                        <table id="agentcomplaintsTable" class="table table-striped table-hover">
+                            <thead>
+                                <tr class="tr-agent-complaints">
+                                    <th>
+                                        <input type="checkbox" id="agent-complaints-all-cb"
+                                               name="agent-complaints-all-cb">
+                                    </th>
+                                    <th>#</th>
+                                    <th>SUBJECT</th>
+                                    <th>DETAILS</th>
+                                    <th>CATEGORY</th>
+                                    <th>DATE SUBMITTED</th>
+                                    <th>STATUS</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" class="checkbox" /></td>
+                                    <td class="list-number">1</td>
+                                    <td class="agent-subject">Ann Culhane</td>
+                                    <td class="agent-comp-details text-truncate">
+                                        Lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </td>
+                                    <td class="agent-comp-category">Quezon City</td>
+                                    <td class="agent-date-submitted">09178239575</td>
+                                    <td class="agent-comp-status">ann.culhane@yahoo.com</td>
+                                    <td class="action-btns">
+                                        <div class="container-button">
+                                            <!-- Details Button -->
+                                            <button type="button" class="btn btn-success btn-sm details"
+                                                    data-bs-toggle="modal" data-bs-target="#agentcomp-details-Modal">
+                                                Details
+                                            </button>
+                                            <!-- Details Modal -->
+                                            <div class="modal fade" id="agentcomp-details-Modal" tabindex="-1"
+                                                 aria-labelledby="agentcomp-details-ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fs-5"
+                                                                id="agentcomp-details-ModalLabel">
+                                                                Agent Complaint Details
+                                                            </h1>
+                                                            <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p class="bold-header">Subject: </p>
+                                                            <p class="agent-subject">Ann Culhane</p>
+                                                            <p class="bold-header">Details: </p>
+                                                            <p class="agent-comp-details">
+                                                                Lorem ipsum
+                                                                dolor sit amet,
+                                                                consectetur adipiscing elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                            </p>
+                                                            <p class="bold-header">Category: </p>
+                                                            <p class="agent-comp-category">Category</p>
+                                                            <p class="bold-header">Date Submitted: </p>
+                                                            <p class="agent-date-submitted">09178239575</p>
+                                                            <p class="bold-header">Status: </p>
+                                                            <p class="agent-comp-status">ann.culhane@yahoo.com</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Resolve Button -->
+                                            <button type="button" id="btn-agent-resolve" onclick="change()"
+                                                    class="btn btn-sm btn-primary" data-bs-toggle="modal">
+                                                Resolve
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <!-- Customer Complaints Sub-Tab -->
+                <div class="tab-content" id="customercomp-subtab-content">
+                    <div class="tab-pane fade show" id="customercomplaints" role="tabpanel"
+                         aria-labelledby="customercomplaints-subtab">
+                        <table id="customercomplaintsTable" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" id="agent-complaints-all-cb"
+                                               name="agent-complaints-all-cb">
+                                    </th>
+                                    <th>#</th>
+                                    <th>SUBJECT</th>
+                                    <th>DETAILS</th>
+                                    <th>CATEGORY</th>
+                                    <th>DATE SUBMITTED</th>
+                                    <th>STATUS</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" class="checkbox" /></td>
+                                    <td class="list-number">1</td>
+                                    <td class="customer-subject">Ann Culhane</td>
+                                    <td class="customer-comp-details">Mulberry House</td>
+                                    <td class="customer-comp-category">Quezon City</td>
+                                    <td class="customer-date-submitted">09178239575</td>
+                                    <td class="customer-comp-status">ann.culhane@yahoo.com</td>
+                                    <td class="action-btns">
+                                        <div class="container-button">
+                                            <!-- Details Button -->
+                                            <button type="button" class="btn btn-success btn-sm details"
+                                                    data-bs-toggle="modal" data-bs-target="#customercomp-details-Modal">
+                                                Details
+                                            </button>
+                                            <!-- Details Modal -->
+                                            <div class="modal fade" id="customercomp-details-Modal" tabindex="-1"
+                                                 aria-labelledby="customercomp-details-ModalLabel"
+                                                 aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fs-5"
+                                                                id="customercomp-details-ModalLabel">
+                                                                Customer
+                                                                Details
+                                                            </h1>
+                                                            <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p class="bold-header">Subject: </p>
+                                                            <p class="customer-subject">Ann Culhane</p>
+                                                            <p class="bold-header">Details: </p>
+                                                            <p class="customer-comp-details">
+                                                                Lorem ipsum
+                                                                dolor sit amet,
+                                                                consectetur adipiscing elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                                elit.
+                                                            </p>
+                                                            <p class="bold-header">Category: </p>
+                                                            <p class="customer-comp-category">Category</p>
+                                                            <p class="bold-header">Date Submitted: </p>
+                                                            <p class="customer-date-submitted">09178239575</p>
+                                                            <p class="bold-header">Status: </p>
+                                                            <p class="customer-comp-status">
+                                                                ann.culhane@yahoo.com
+                                                            </p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Resolve Button -->
+                                            <button type="button" id="btn-customer-resolve" onclick="change()"
+                                                    class="btn btn-sm btn-primary" data-bs-toggle="modal">
+                                                Resolve
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonials Tab -->
+            <div class="table-responsive tab-pane fade" id="testimonials" role="tabpanel"
+                 aria-labelledby="testimonials-tab">
+                <table id="testimonialsTable" class="table table-striped table-hover">
+                    <thead>
+                        <tr class="tr-testimonials-tab">
+                            <th><input type="checkbox" id="testimonials-all-cb" name="testimonials-all-cb"></th>
+                            <th>#</th>
+                            <th>NAME</th>
+                            <th>EMAIL</th>
+                            <th>DETAILS</th>
+                            <th>DATE SUBMITTED</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" class="checkbox" /></td>
+                            <td class="list-numbers">1</td>
+                            <td class="agent-name">yeah</td>
+                            <td class="agent-email">Ann Culhane</td>
+                            <td class="agent-testimonial-details text-truncate">
+                                words words words words words words words words words
+                                words words words words words words words words words
+                                words words words words words words words words words
+                                words words words words words words words words words
+                                words words words words words words words words words
+                                words words words words words words words words words
+                            </td>
+                            <td class="agent-testimonial-submitted">Quezon City</td>
+                            <td class="agent-testimonial-status">09178239575</td>
+                            <td class="action-btns">
+                                <div class="container-button">
+                                    <!-- Details Button -->
+                                    <button type="button" class="btn btn-success btn-sm testidetails"
+                                            data-bs-toggle="modal" data-bs-target="#testimonials-details-Modal">
+                                        Details
+                                    </button>
+                                    <!-- Details Modal -->
+                                    <div class="modal fade" id="testimonials-details-Modal" tabindex="-1"
+                                         aria-labelledby="testimonials-details-ModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5"
+                                                        id="testimonials-details-ModalLabel">
+                                                        Testimonial Details
+                                                    </h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="list-numbers">1</p>
+                                                    <p class="agent-name">yeah</p>
+                                                    <p class="agent-email">Ann Culhane</p>
+                                                    <p class="agent-testimonial-details text-truncate">
+                                                        words words words words words words words words words
+                                                        words words words words words words words words words
+                                                        words words words words words words words words words
+                                                        words words words words words words words words words
+                                                        words words words words words words words words words
+                                                        words words words words words words words words words
+                                                    </p>
+                                                    <p class="agent-testimonial-submitted">Quezon City</p>
+                                                    <p class="agent-testimonial-status">09178239575</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Resolve Button -->
+                                    <button type="button" id="btn-testimonial" onclick="change()"
+                                            class="btn btn-sm btn-primary" data-bs-toggle="modal">
+                                        Post
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- Notifications Tab -->
+            <div class="table-responsive tab-pane fade" id="notifications" role="tabpanel"
+                 aria-labelledby="notifications-tab">
+                <div class="container testimonial-card mb-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+                            <div class="row g-0">
+                                <div class="col-md-1">
+                                    <div class="card_img align-self-center">
+                                        <img src="./images/profile pic.jpg" class="img-fluid rounded-start profile img" alt="profile-img">
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h5 class="card-title testimonial-card">
+                                        <span class="agentTitle"></span> <!-- Static Only -->
+                                        <span class="agentNameSpan">Amelie Johnson</span>
+                                        <span class="testimonyAction"></span> <!-- Static Only -->
+                                    </h5>
+                                    <p class="card-text testimonialText"></p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="testimonial-time text-end">10:01 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container testimonial-card mb-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+                            <div class="row g-0">
+                                <div class="col-md-1">
+                                    <div class="card_img align-self-center">
+                                        <img src="./images/profile pic.jpg" class="img-fluid rounded-start profile img" alt="profile-img">
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h5 class="card-title testimonial-card">
+                                        <span class="agentTitle"></span> <!-- Static Only -->
+                                        <span class="agentName">Amelie Johnson</span>
+                                        <span class="complaintAction"></span> <!-- Static Only -->
+                                        <span class="customerTitle">Robertson</span>
+                                        <span class="period"></span> <!-- Static Only -->
+                                    </h5>
+                                    <p class="card-text testimonial-cardtext">With supporting text below as a natural lead-in to additional content.</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="testimonial-time text-end">10:01 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container testimonial-card mb-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+                            <div class="row g-0">
+                                <div class="col-md-1">
+                                    <div class="card_img align-self-center">
+                                        <img src="./images/profile pic.jpg" class="img-fluid rounded-start profile img" alt="profile-img">
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <h5 class="card-title testimonial-card">
+                                        <span class="customerName">John Legend</span>
+                                        <span class="complaintAction"></span> <!-- Static Only -->
+                                        <span class="agentTitle"></span> <!-- Static Only -->
+                                        <span class="agentName">Cristina Reyes</span>
+                                    </h5>
+                                    <p class="card-text testimonial-cardtext">With supporting text below as a natural lead-in to additional content.</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="testimonial-time text-end">10:01 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

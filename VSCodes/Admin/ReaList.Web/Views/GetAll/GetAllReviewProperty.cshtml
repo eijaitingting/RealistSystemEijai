@@ -1,0 +1,144 @@
+﻿@model IEnumerable<ReaList.Library.Model.Pages.AllProperties>
+
+@{
+    ViewData["Title"] = "GetAllReviewProperty";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GetAllReviewProperty</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyCategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyTypeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Overview)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bedrooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bathrooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FloorAreaSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DevelopmentInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Municipality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barangay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyCategoryID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyTypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Overview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bedrooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bathrooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FloorAreaSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DevelopmentInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Municipality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Barangay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

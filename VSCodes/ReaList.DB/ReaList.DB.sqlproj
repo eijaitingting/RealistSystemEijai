@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ReaList.DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{0120a983-d4db-4d9e-a071-06cec15c7352}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ReaList.DB</RootNamespace>
+    <AssemblyName>ReaList.DB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Agents.sql" />
+    <Build Include="dbo\Tables\Customers.sql" />
+    <Build Include="dbo\Tables\Admin.sql" />
+    <Build Include="dbo\Tables\Properties.sql" />
+    <Build Include="dbo\Tables\Bookings.sql" />
+    <Build Include="dbo\Tables\Notifications.sql" />
+    <Build Include="dbo\Tables\Subscription.sql" />
+    <Build Include="dbo\Tables\SubscriptionType.sql" />
+    <Build Include="dbo\Tables\Testimonies.sql" />
+    <Build Include="dbo\Tables\PropertyType.sql" />
+    <Build Include="dbo\Tables\PropertyCategory.sql" />
+    <Build Include="dbo\Tables\AuditTrail.sql" />
+    <Build Include="dbo\Tables\PropertyRatings.sql" />
+    <Build Include="dbo\Tables\PropertyPhotos.sql" />
+    <Build Include="dbo\Tables\Features.sql" />
+    <Build Include="dbo\Tables\Amenities.sql" />
+    <Build Include="dbo\Tables\PropertyLocation.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AgentLogin.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AgentRegister.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllAgentAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSpecificAgentAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSpecificCustomerAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllCustomerAccount.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CustomerRegister.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAccountByEmail.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AgentProfile.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetEmailById.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CustomerProfile.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSpecificProperty.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetPropertyName.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllSoldProperties.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllRentedProperties.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllActiveProperties.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddPropertyType.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddPropertyCategory.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddProperty.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllSoldPropertiesbyAgent.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllRentedPropertiesbyAgent.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllActivePropertiesbyAgent.sql" />
+    <Build Include="dbo\Tables\Complaints.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdatePropertyStatus.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateBookingStatus.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateBookingPostStatus.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateBooking.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSpecificPropertyDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSpecificBooking.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllPropertiesForSale.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllPropertiesForRent.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllComplaintsByAgent.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllBookingsbyCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllBookingsbyAgent.sql" />
+    <Build Include="dbo\Stored Procedures\sp_EditProperty.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddTestimony.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddComplaint.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddBooking.sql" />
+    <Build Include="dbo\Tables\AgentRatings.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetSpecificComplaint.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetBookingbyCustomerIDandPropertyID.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAgentRating.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddAgentRating.sql" />
+    <Build Include="dbo\Stored Procedures\sp_VerifyActivationCodeCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CustomerLogin.sql" />
+    <Build Include="dbo\Stored Procedures\sp_VerifyActivationCodeAgent.sql" />
+    <Build Include="dbo\Stored Procedures\GetUserByResetPasswordCode.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetCustomerDataByResetCode.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateCustomerPassword.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateAgentPassword.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateCustomerResetCode.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateAgentResetCode.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAgentDataByResetCode.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ValidateCustomerPassword.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ValidateAgentPassword.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateAdminResetCode.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateAdminPassword.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAdminDataByResetCode.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AdminLogin.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ValidateAdminPassword.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllProperties.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllComplaints.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllSubscription.sql" />
+    <Build Include="dbo\Stored Procedures\sp_Unsubscribe.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddSubscription.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateSubscription.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddNewSubscription.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetAllSubscriptionType.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ActivateSubscription.sql" />
+  </ItemGroup>
+</Project>

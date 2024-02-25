@@ -1,0 +1,70 @@
+﻿h2.mt-5 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+/* Title Header */
+.title-header {
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+/* Free Plan Card */
+.free-plan {
+    width: 100%;
+}
+/* Premium Plan Card */
+.premium-plan {
+    width: 100%;
+}
+/* Free Text Bold */
+.text-bold {
+    font-weight: bold;
+    color: #283B62;
+    list-style-position: inside;
+}
+/* Premium Plan Header */
+h4.premium-plan-header {
+    color: #283B62;
+}
+/* terms-conditions-text */
+.terms-conditions-text {
+    font-size: small;
+    margin-top: 10px;
+}
+/* card free-plan */
+.card.free-plan {
+    padding: 10px;
+}
+/* card premium-plan */
+.card.premium-plan {
+    padding: 10px;
+}
+/* qr-image */
+.qr-image img {
+    width: 200px;
+    margin-top: 20px;
+}
+/* subscription-text-header */
+.subscription-text-header {
+    color: #283B62;
+    text-align: center;
+    margin-top: 80px;
+}
+/* submit */
+.btn-primary.submit {
+    margin-top: 10px;
+}
+/* card premium-plan */
+.card.premium-plan {
+    background-color: rgb(180, 204, 228);
+}
+@media only screen and (min-width: 400px) {
+    .free-plan {
+        margin-bottom: 20px;
+    }
+    .premium-plan {
+        margin-bottom: 20px;
+    }
+  }

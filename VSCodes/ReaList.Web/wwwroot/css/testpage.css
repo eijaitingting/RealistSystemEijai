@@ -1,0 +1,22 @@
+.text-header {
+    color: #283B62;
+    font-weight: bold;
+    text-align: start;
+}
+div.col-md-6 {
+    text-align: end;
+}
+a.btn.add-new {
+    background-color: rgb(59, 89, 152, 0.85);
+    color: #FFFFFF;
+    border-color: rgb(59, 89, 152, 0.85);
+}
+@media only screen and (max-width: 768px) and (min-width: 400px) {
+    .text-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .container.col-md-6.add-new-button {
+        text-align: center;
+    }
+  }

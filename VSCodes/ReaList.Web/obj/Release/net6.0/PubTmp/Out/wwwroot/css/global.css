@@ -1,0 +1,29 @@
+.body-bg {
+    overflow: auto;
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.body-overflow-hidden {
+    overflow: hidden;
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.body-white-background {
+    background-color: white;
+}
+
+.btn.btn-primary {
+    background-color: #283B62;
+
+}
+
+.btn-primary.btn-lg {
+    background-color: #283B62;
+}
+

@@ -1,0 +1,149 @@
+﻿@model ReaList.Library.Model.RealistsVM
+@{
+    ViewData["Title"] = "SubscriptionPlan";
+    Layout = "~/views/shared/_Layout.cshtml";
+
+    var sub = Model.subscriptionList
+    .Where(x => x.AgentID == Model.agentAccountModel.AgentID && x.IsActive && x.ExpiryDate > DateTime.Now)
+    .FirstOrDefault();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Subscription Plan</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="~/css/global.css">
+    <link rel="stylesheet" href="~/css/agent-subscriptionpages.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap Font and Icons 1.3.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="vh-100 body-overflow-hidden">
+    <main>
+        <div class="d-flex container justify-content-center">
+            <div class="row g-3 col-md-12">
+
+                <h2 class="mt-5 mb-3">ReaList Subscription Plan</h2>
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="container col-xl-6">
+                            <div class="card free-plan">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center">FREE PLAN</h4>
+                                    <p class="card-text">
+                                        Gain <span class="text-bold">FREE</span> access to these ReaList
+                                        features:
+                                    </p>
+                                    <div class="d-flex container justify-content-center">
+                                        <ul>
+                                            <li>Limited only for 3 listings</li>
+                                            <li>Limited only for 5 pictures per listing</li>
+                                            <li>Verified by Realist</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container col-xl-6">
+                            <div class="card premium-plan">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center premium-plan-header">PREMIUM PLAN</h4>
+                                    <h5 class="card-title text-center">PHP 3,000 /MONTH</h5>
+                                    <p class="card-text">
+                                        Gain <span class="text-bold">FREE</span> access to these ReaList
+                                        features:
+                                    </p>
+                                    <div class="d-flex container justify-content-center">
+                                        <ul>
+                                            <li><span class="text-bold">Unlimited</span> listing of your properties</li>
+                                            <li><span class="text-bold">10</span> photos per listing</li>
+                                            <li>
+                                                <span class="text-bold">Online booking appointments</span> for on-site
+                                                visitations
+                                            </li>
+                                            <li><span class="text-bold">Virtual showroom</span> for your properties</li>
+                                            <li><span class="text-bold">Customized</span> Agent Profile Page</li>
+                                            <li><span class="text-bold">Verified</span> by ReaList</li>
+                                        </ul>
+                                    </div>
+                                    <div class="container text-center">
+                                        <p class="terms-conditions-text">
+                                            Refunds and cancellations are not allowed. Click
+                                            <a href="#"><span>here</span></a>
+                                            to see our Terms and Conditions.
+                                        </p>
+                                    </div>
+                                    <div class="container text-center">
+                                        <a asp-action="SubscriptionForm" class="btn btn-primary subscribe">Subscribe</a>
+
+                                        <!--@if (sub != null)
+                                        {
+                                            <form asp-controller="Agent" asp-action="Unsubscribe" method="post" enctype="multipart/form-data">
+                                                <input asp-for="@sub.SubscriptionID" id="SubscriptionID" class="form-control" type="hidden" />
+                                                <button type="submit" class="btn btn-primary">Unubscribe</button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Subscribe">Subscribe</button>
+                                            <form asp-controller="Agent" asp-action="SaveReference" method="post" enctype="multipart/form-data">
+                                                <center>
+                                                    <img id="blah1" src="~/images/missing-image.png" style="width: 100px; height: 100px;" alt="your image" />
+                                                    <input asp-for="@Model.subscriptionModel.SubPhotoImage" type="file" class="form-control" multiple onchange="readURL(this);" />
+                                                    <input asp-for="@Model.subscriptionModel.ReferenceNumber" class="form-control" />
+                                                    <label asp-for="@Model.subscriptionModel.ReferenceNumber">Input Reference Number</label>
+                                                    <div class="form-group">
+                                                        <input type="submit" value="Subscribe" class="btn btn-primary float-end" />
+                                                    </div>
+                                                </center>
+                                            </form>
+                                        }-->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="./js/agent-bookingmanagement.js"></script>
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah1')
+                        .attr('src', e.target.result)
+                        .width(100)
+                        .height(100);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
+</body>
+</html>

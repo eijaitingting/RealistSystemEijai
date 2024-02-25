@@ -1,0 +1,654 @@
+﻿@model ReaList.Library.Model.RealistsVM
+
+@{
+    ViewData["Title"] = "Property";
+    var sub = Model.subscriptionList
+           .Where(x => x.AgentID == Model.agentAccountModel.AgentID && x.IsActive && x.ExpiryDate > DateTime.Now)
+           .FirstOrDefault();
+}
+
+<head>
+    <title>Add Property</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/agent-addlistingform.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap Font and Icons 1.3.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="d-flex container justify-content-center">
+            <div class="row g-3 col-md-12">
+
+                <h2 class="mt-5">Add a New Listing</h2>
+                @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                {
+                    <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+                }
+
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <div class="error-message text-danger">
+                        @ViewBag.ErrorMessage
+                    </div>
+                }
+
+                <form asp-controller="Property" asp-action="SaveProperty" method="post" enctype="multipart/form-data">
+                    <div class="form-group col-lg-12 ">
+                        <div class="row">
+
+                            <!-- Property ID -->
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <input asp-for="propertyModel.PropertyID" class="form-control" type="hidden" />
+                            </div>
+
+                            <!-- Agent ID -->
+                            <div class="form-group">
+                                <input asp-for="propertyModel.AgentID" class="form-control" type="hidden" />
+                            </div>
+
+
+                            <!-- Property Name -->
+                            <div class="col-md-12">
+                                <label asp-for="propertyModel.PropertyName" class="pb-1 h6">Property Name</label>
+                                <input asp-for="propertyModel.PropertyName" class="form-control mb-3" id="property-name" />
+                                <span asp-validation-for="propertyModel.PropertyName" class="text-danger"></span>
+                            </div>
+
+                            <!-- Overview -->
+                            <div class="col-md-12">
+                                <label asp-for="propertyModel.Overview" class="pb-1 h6">Overview</label>
+                                <br />
+                                <textarea id="overview" asp-for="propertyModel.Overview" class="form-control mb-3" rows="7" cols="173"></textarea>
+                                <span asp-validation-for="propertyModel.Overview" class="text-danger"></span>
+                            </div>
+
+                            <!-- Property Category, Property Type, and Total Price -->
+                            <div class="row mx-auto p-0">
+                                <div class="col-md-4">
+                                    <label asp-for="propertyModel.PropertyCategoryID" class="pb-1 h6">Property Category</label><br>
+                                    <select id="property-category" asp-for="propertyModel.PropertyCategoryID" name="PropertyCategoryID" class="form-control mb-3">
+                                        <option selected disabled>Select Property Category</option>
+                                        <option value="1">For Sale</option>
+                                        <option value="2">For Rent</option>
+                                    </select>
+                                    <span asp-validation-for="propertyModel.PropertyCategoryID" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label asp-for="propertyModel.PropertyTypeID" class="pb-1 h6">Property Type</label><br>
+                                    <select id="property-type" asp-for="propertyModel.PropertyTypeID" name="PropertyTypeID" class="form-control mb-3">
+                                        <option selected disabled>Select Property Type</option>
+                                        <option value="1">House and Lot</option>
+                                        <option value="2">Condominium</option>
+                                        <option value="3">Apartment</option>
+                                    </select>
+                                    <span asp-validation-for="propertyModel.PropertyTypeID" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label asp-for="propertyModel.TotalPrice" class="pb-1 h6">Total Price (in PHP)</label>
+                                    <input id="total-price" asp-for="propertyModel.TotalPrice" class="form-control mb-3" placeholder="Enter Total Price" min="5000" />
+                                    <span asp-validation-for="propertyModel.TotalPrice" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Bedrooms, Bathrooms, and Floor Area -->
+                            <div class="row mx-auto p-0">
+                                <div class="col-md-4">
+                                    <label asp-for="propertyModel.Bedrooms" class="pb-1 h6">Bedrooms</label>
+                                    <input id="num-bed" asp-for="propertyModel.Bedrooms" class="form-control mb-3" placeholder="No. of Bedrooms" />
+                                    <span asp-validation-for="propertyModel.Bedrooms" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label asp-for="propertyModel.Bathrooms" class="pb-1 h6">Bathrooms</label>
+                                    <input id="num-bath" asp-for="propertyModel.Bathrooms" class="form-control mb-3" placeholder="No. of Bathrooms" />
+                                    <span asp-validation-for="propertyModel.Bathrooms" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label asp-for="propertyModel.FloorAreaSize" class="pb-1 h6">Floor Area (in sqm)</label>
+                                    <input id="floor-area" asp-for="propertyModel.FloorAreaSize" class="form-control mb-3" />
+                                    <span asp-validation-for="propertyModel.FloorAreaSize" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Region and City -->
+                            <div class="row mx-auto p-0">
+                                <div class="col-md-6">
+                                    <label class="pb-1 h6" asp-for="propertyModel.Region">Region</label><br>
+                                    <select id="region-select" asp-for="propertyModel.Region" name="Region" class="form-control mb-3">
+                                        <option selected>Metro Manila</option>                                        
+                                    </select>
+                                    <span asp-validation-for="propertyModel.Region" class="text-danger"></span>
+                                </div>                               
+
+                                <div class="col-md-6">
+                                    <label asp-for="propertyModel.City" class="pb-1 h6">City</label>
+                                    <input id="city-group" asp-for="propertyModel.City" class="form-control mb-3" />
+                                    <span asp-validation-for="propertyModel.City" name="City" class="text-danger"></span>
+                                </div>
+                                <!--<div class="col-md-6">
+                                    <label asp-for="City" class="pb-1 h6">City</label><br>
+                                    <select id="city-group" asp-for="City" name="City" class="form-control mb-3">
+                                        <option selected disabled>Select City</option>
+                                        <option value="Caloocan City">Caloocan City</option>
+                                        <option value="Las Pi�as City">Las Pi�as City</option>
+                                        <option value="Makati City">Makati City</option>
+                                        <option value="Malabon City">Malabon City</option>
+                                        <option value="Mandaluyong City">Mandaluyong City</option>
+                                        <option value="Manila City">Manila City</option>
+                                        <option value="Marikina City">Marikina City</option>
+                                        <option value="Muntinlupa City">Muntinlupa City</option>
+                                        <option value="Navotas City">Navotas City</option>
+                                        <option value="Para�aque City">Para�aque City</option>
+                                        <option value="Pasay City">Pasay City</option>
+                                        <option value="Pasig City">Pasig City</option>
+                                        <option value="Pateros">Pateros</option>
+                                        <option value="Quezon City">Quezon City</option>
+                                        <option value="San Juan City">San Juan City</option>
+                                        <option value="Taguig City">Taguig City</option>
+                                        <option value="Valenzuela City">Valenzuela City</option>
+                                    </select>
+                                    <span asp-validation-for="City" class="text-danger"></span>
+                                </div>-->
+                            </div>
+
+                            <!-- Municipality and Baranggay -->
+                            <div class="row mx-auto p-0">
+                                <div id="municipality-group" class="col-md-6">
+                                    <label asp-for="propertyModel.Municipality" class="pb-1 h6">Municipality</label><br>
+                                    <input asp-for="propertyModel.Municipality" id="municipality" class="form-control mb-3" />
+                                    <span asp-validation-for="propertyModel.Municipality" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label asp-for="propertyModel.Barangay" class="pb-1 h6">Barangay</label>
+                                    <input id="barangay" asp-for="propertyModel.Barangay" class="form-control mb-3" />
+                                    <span asp-validation-for="propertyModel.Barangay" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Street and Zip Code -->
+                            <div class="row mx-auto p-0">
+                                <div class="col-md-6">
+                                    <label asp-for="propertyModel.Street" class="pb-1 h6">Street</label>
+                                    <input id="street" asp-for="propertyModel.Street" class="form-control mb-3" />
+                                    <span asp-validation-for="propertyModel.Street" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="propertyModel.ZipCode" class="pb-1 h6">Zip Code</label>
+                                    <input id="zip-code" asp-for="propertyModel.ZipCode" class="form-control mb-3" />
+                                    <span asp-validation-for="propertyModel.ZipCode" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Developer Information -->
+                            <div class="row mx-auto p-0 mb-3">
+                                <div class="col-md-12">
+                                    <label asp-for="propertyModel.DevelopmentInfo" class="dev pb-1 h6">Developer / Developer Information</label><br />
+                                    <textarea asp-for="propertyModel.DevelopmentInfo" id="text" class="mb-3" name="developer" rows="5" cols="173"></textarea>
+                                    <span asp-validation-for="propertyModel.DevelopmentInfo" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="propertyModel.PropertyStatus" class="form-control" type="hidden" />
+                            </div>
+
+                            <!-- Amenities -->
+                            <div class="row mx-auto p-0">
+                                <div class="col-md-12">
+                                    <label class="pb-1 h6">Amenities</label><br />
+                                </div>
+                                <div class="row mb-2 mx-auto p-0">
+                                    <div class="col-sm-3">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" name="propertyModel.AmenitiesName" value="Swimming Pool" class="form-check-input" id="inlineCheckbox1" />
+                                            <label class="form-check-label">Swimming Pool</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Basketball Court" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Basketball Court</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Laundry" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Laundry</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Parking" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Parking</label>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2 mx-auto p-0">
+                                    <br>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Aircon" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Aircon</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Amenity Lobbies" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Amenity Lobbies</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Clubhouse" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Clubhouse</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Refrigerator" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Refrigerator</label>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2 mx-auto p-0">
+                                    <br>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Pets Allowed" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Pets Allowed</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Fire Extinguisher" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Fire Extinguisher</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="First Aid Kit" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">First Aid Kit</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Kitchen" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Kitchen</label>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2 mx-auto p-0">
+                                    <br>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Landscaped Gardens" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Landscaped Gardens</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Dishes and Silverware" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Dishes and Silverware</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Smoking Allowed" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Smoking Allowed</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.AmenitiesName" value="Security Cameras" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Security Cameras</label>
+                                    </div>
+                                </div>
+                            </div> <!-- amenities parent row end tag -->
+
+                            <!-- Features -->
+                            <div class="row mx-auto p-0">
+                                <div class="col-md-12">
+                                    <label class="pb-1 h6">Features</label><br>
+                                </div>
+                                <div class="row mb-2 mx-auto p-0">
+                                    <div class="col-sm-3">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" name="propertyModel.FeaturesName" value="Virtual Tour" class="form-check-input" id="inlineCheckbox1" />
+                                            <label class="form-check-label">Virtual Tour</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" name="propertyModel.FeaturesName" value="Location Details" class="form-check-input" id="inlineCheckbox1" />
+                                            <label class="form-check-label">Location Details</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" name="propertyModel.FeaturesName" value="Owner Information" class="form-check-input" id="inlineCheckbox1" />
+                                            <label class="form-check-label">Owner Information</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-check form-check-inline">
+                                            <input type="checkbox" name="propertyModel.FeaturesName" value="Neighborhood Guides" class="form-check-input" id="inlineCheckbox1" />
+                                            <label class="form-check-label">Neighborhood Guides</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4 mx-auto p-0">
+                                    <br>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.FeaturesName" value="Amenities Details" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Amenities Details</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.FeaturesName" value="Contact Forms" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Contact Forms</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.FeaturesName" value="Safety First" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Safety First</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="checkbox" name="propertyModel.FeaturesName" value="Pictures" class="form-check-input" id="inlineCheckbox1" />
+                                        <label class="form-check-label">Pictures</label>
+                                    </div>
+                                </div>
+                            </div> <!-- features parent row end tag -->
+
+                            <!-- Upload Photos -->
+                            <div class="row mb-4 mx-auto p-0">
+                                <div class="col-md-12">
+                                    <label class="pb-1 h6">Upload Photos</label> <br />
+                                    <div class="row mb-4 mx-auto p-0">
+                                        <div class="col photos">
+                                            <img id="blah1" src="~/images/missing-image.png" alt="your image" />
+                                            <input type="file" asp-for="propertyModel.Main" multiple onchange="readURL(this, 'blah1');" />
+                                        </div>
+                                        <div class="col photos">
+                                            <img id="blah2" src="~/images/missing-image.png" alt="your image" />
+                                            <input type="file" asp-for="propertyModel.Second" multiple onchange="readURL(this, 'blah2');" />
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4 mx-auto p-0">
+                                        <div class="col photos">
+                                            <img id="blah3" src="~/images/missing-image.png" alt="your image" />
+                                            <input type="file" asp-for="propertyModel.Third" multiple onchange="readURL(this, 'blah3');" />
+                                        </div>
+                                        <div class="col photos">
+                                            <img id="blah4" src="~/images/missing-image.png" alt="your image" />
+                                            <input type="file" asp-for="propertyModel.Fourth" multiple onchange="readURL(this, 'blah4');" />
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4 mx-auto p-0">
+                                        <div class="col photos">
+                                            <img id="blah5" src="~/images/missing-image.png" alt="your image" />
+                                            <input type="file" asp-for="propertyModel.Fifth" multiple onchange="readURL(this, 'blah5');" />
+                                        </div>
+                                    </div>
+                                        @if (sub != null)
+                                        {
+                                            <div class="row mb-4 mx-auto p-0">
+                                                <div class="col photos">
+                                                    <img id="blah6" src="~/images/missing-image.png" alt="your image" />
+                                                    <input type="file" asp-for="propertyModel.Sixth" multiple onchange="readURL(this, 'blah6');" />
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-4 mx-auto p-0">
+                                                <div class="col photos">
+                                                    <img id="blah7" src="~/images/missing-image.png" alt="your image" />
+                                                    <input type="file" asp-for="propertyModel.Seventh" multiple onchange="readURL(this, 'blah7');" />
+                                                </div>
+                                                <div class="col photos">
+                                                    <img id="blah8" src="~/images/missing-image.png" alt="your image" />
+                                                    <input type="file" asp-for="propertyModel.Eight" multiple onchange="readURL(this, 'blah8');" />
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4 mx-auto p-0">
+                                                <div class="col photos">
+                                                    <img id="blah9" src="~/images/missing-image.png" alt="your image" />
+                                                    <input type="file" asp-for="propertyModel.Ninth" multiple onchange="readURL(this, 'blah9');" />
+                                                </div>
+                                                <div class="col photos">
+                                                    <img id="blah10" src="~/images/missing-image.png" alt="your image" />
+                                                    <input type="file" asp-for="propertyModel.Tenth" multiple onchange="readURL(this, 'blah10');" />
+                                                </div>
+                                            </div>
+                                        }
+                                </div>
+                            </div>
+
+                            <!-- Neighborhood Ratings-->
+                            <div class="row mb-4 mx-auto p-0">
+                                <div class="col-md-12">
+                                    <label class="pb-1 h6" for="neigh-ratings">Neighborhood Ratings</label><br>
+
+                                    <!-- ROADS -->
+                                    <h5 asp-for="propertyModel.RoadRatings" class="m-0 head-star">Roads</h5>
+                                    <div class="rating">
+                                        <input type="radio" id="road5" asp-for="propertyModel.RoadRatings" value="5" name="RoadRatings" /><label for="road5"></label>
+                                        <input type="radio" id="road4" asp-for="propertyModel.RoadRatings" value="4" name="RoadRatings" /><label for="road4"></label>
+                                        <input type="radio" id="road3" asp-for="propertyModel.RoadRatings" value="3" name="RoadRatings" /><label for="road3"></label>
+                                        <input type="radio" id="road2" asp-for="propertyModel.RoadRatings" value="2" name="RoadRatings" /><label for="road2"></label>
+                                        <input type="radio" id="road1" asp-for="propertyModel.RoadRatings" value="1" name="RoadRatings" /><label for="road1"></label>
+                                    </div>
+                                    <span asp-validation-for="propertyModel.RoadRatings" class="text-danger"></span>
+                                    <div class="row mb-3 column-gap-2 mx-auto p-0">
+                                        <div class="col p-2 rating-desc">
+                                            <div>The roads surrounding the property are not maintained.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The roads surrounding the property are slightly maintained.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The roads surrounding the property are maintained.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The roads surrounding the property are well-maintained.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The roads surrounding the property are greatly-maintained.</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- SAFETY -->
+                                    <h5 asp-for="propertyModel.SafetyRatings" class="m-0 head-star">Safety</h5>
+                                    <div class="rating">
+                                        <input type="radio" id="safety5" asp-for="propertyModel.SafetyRatings" value="5" name="SafetyRatings" /><label for="safety5"></label>
+                                        <input type="radio" id="safety4" asp-for="propertyModel.SafetyRatings" value="4" name="SafetyRatings" /><label for="safety4"></label>
+                                        <input type="radio" id="safety3" asp-for="propertyModel.SafetyRatings" value="3" name="SafetyRatings" /><label for="safety3"></label>
+                                        <input type="radio" id="safety2" asp-for="propertyModel.SafetyRatings" value="2" name="SafetyRatings" /><label for="safety2"></label>
+                                        <input type="radio" id="safety1" asp-for="propertyModel.SafetyRatings" value="1" name="SafetyRatings" /><label for="safety1"></label>
+                                    </div>
+                                    <span asp-validation-for="propertyModel.SafetyRatings" class="text-danger"></span>
+                                    <div class="row mb-3 column-gap-2 mx-auto p-0">
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property area is not guarded, does not have any fire-prevention equipment, and is not CCTV monitored.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property area is occasionally guarded, has incomplete fire-prevention equipment, and has a few CCTV installed (min. of 2).</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property area is guarded, has limited fire-prevention equipment, and has a fair amount of CCTV installed (min. of 4).</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property area is well-guarded, has fire-prevention equipment, and has an adequate amount of CCTV installed (min. of 6).</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property area is greatly-guarded, has complete and well-positioned fire-prevention equipment, and has an outstanding amount of CCTV (min. of 8).</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- CLEANLINESS -->
+                                    <h5 asp-for="propertyModel.CleanlinessRatings" class="m-0 head-star">Cleanliness</h5>
+                                    <div class="rating">
+                                        <input type="radio" id="clean5" asp-for="propertyModel.CleanlinessRatings" value="5" name="CleanlinessRatings" /><label for="clean5"></label>
+                                        <input type="radio" id="clean4" asp-for="propertyModel.CleanlinessRatings" value="4" name="CleanlinessRatings" /><label for="clean4"></label>
+                                        <input type="radio" id="clean3" asp-for="propertyModel.CleanlinessRatings" value="3" name="CleanlinessRatings" /><label for="clean3"></label>
+                                        <input type="radio" id="clean2" asp-for="propertyModel.CleanlinessRatings" value="2" name="CleanlinessRatings" /><label for="clean2"></label>
+                                        <input type="radio" id="clean1" asp-for="propertyModel.CleanlinessRatings" value="1" name="CleanlinessRatings" /><label for="clean1"></label>
+                                    </div>
+                                    <span asp-validation-for="propertyModel.CleanlinessRatings" class="text-danger"></span>
+                                    <div class="row mb-3 column-gap-2 mx-auto p-0">
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property is unmaintained and unclean.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property is slightly maintained and unclean.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property is fairly maintained and clean.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property is well-maintained and clean.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property is greatly-maintained and clean.</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- PARKING -->
+                                    <h5 asp-for="propertyModel.ParkingRatings" class="m-0 head-star">Parking</h5>
+                                    <div class="rating">
+                                        <input type="radio" id="park5" asp-for="propertyModel.ParkingRatings" value="5" name="ParkingRatings" /><label for="park5"></label>
+                                        <input type="radio" id="park4" asp-for="propertyModel.ParkingRatings" value="4" name="ParkingRatings" /><label for="park4"></label>
+                                        <input type="radio" id="park3" asp-for="propertyModel.ParkingRatings" value="3" name="ParkingRatings" /><label for="park3"></label>
+                                        <input type="radio" id="park2" asp-for="propertyModel.ParkingRatings" value="2" name="ParkingRatings" /><label for="park2"></label>
+                                        <input type="radio" id="park1" asp-for="propertyModel.ParkingRatings" value="1" name="ParkingRatings" /><label for="park1"></label>
+                                    </div>
+                                    <span asp-validation-for="propertyModel.ParkingRatings" class="text-danger"></span>
+                                    <div class="row mb-3 column-gap-2 mx-auto p-0">
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property has no parking space.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property has limited parking space (ex: first-come first-serve basis and pay to park).</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property has a fair amount of parking (min. of 1).</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property has an adequate amount of parking (min. of 2).</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property has a great amount of parking (min. of 3).</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TRAFFIC -->
+                                    <h5 asp-for="propertyModel.TrafficRatings" class="m-0 head-star">Traffic</h5>
+                                    <div class="rating">
+                                        <input type="radio" id="traffic5" asp-for="propertyModel.TrafficRatings" value="5" name="TrafficRatings" /><label for="traffic5"></label>
+                                        <input type="radio" id="traffic4" asp-for="propertyModel.TrafficRatings" value="4" name="TrafficRatings" /><label for="traffic4"></label>
+                                        <input type="radio" id="traffic3" asp-for="propertyModel.TrafficRatings" value="3" name="TrafficRatings" /><label for="traffic3"></label>
+                                        <input type="radio" id="traffic2" asp-for="propertyModel.TrafficRatings" value="2" name="TrafficRatings" /><label for="traffic2"></label>
+                                        <input type="radio" id="traffic1" asp-for="propertyModel.TrafficRatings" value="1" name="TrafficRatings" /><label for="traffic1"></label>
+                                    </div>
+                                    <span asp-validation-for="propertyModel.TrafficRatings" class="text-danger"></span>
+                                    <div class="row mb-3 column-gap-2 mx-auto p-0">
+                                        <div class="col p-2 rating-desc">
+                                            <div>The traffic surrounding the property area is greatly-congested.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The traffic surrounding the property area is highly-congested.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The traffic surrounding the property area is fairly-congested.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The traffic surrounding the property area is slightly-congested.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property area has no traffic.</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- SCHOOLS -->
+                                    <h5 asp-for="propertyModel.SchoolRatings" class="m-0 head-star">Schools</h5>
+                                    <div class="rating">
+                                        <input type="radio" id="school5" asp-for="propertyModel.SchoolRatings" value="5" name="SchoolRatings" /><label for="school5"></label>
+                                        <input type="radio" id="school4" asp-for="propertyModel.SchoolRatings" value="4" name="SchoolRatings" /><label for="school4"></label>
+                                        <input type="radio" id="school3" asp-for="propertyModel.SchoolRatings" value="3" name="SchoolRatings" /><label for="school3"></label>
+                                        <input type="radio" id="school2" asp-for="propertyModel.SchoolRatings" value="2" name="SchoolRatings" /><label for="school2"></label>
+                                        <input type="radio" id="school1" asp-for="propertyModel.SchoolRatings" value="1" name="SchoolRatings" /><label for="school1"></label>
+                                    </div>
+                                    <span asp-validation-for="propertyModel.SchoolRatings" class="text-danger"></span>
+                                    <div class="row mb-3 column-gap-2 mx-auto p-0">
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property's closest school is within one (1) hour radius or more.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property's closest school is within forty (40) minute radius.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property's closest school is within the thirty (30) minute radius.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property's closest school is within the twenty (20) minute radius.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property's closest school is within the fifteen (15) minute radius.</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- RESTAURANTS -->
+                                    <h5 asp-for="propertyModel.RestaurantRatings" class="m-0 head-star">Restaurants</h5>
+                                    <div class="rating">
+                                        <input type="radio" id="resto5" asp-for="propertyModel.RestaurantRatings" value="5" name="RestaurantRatings" /><label for="resto5"></label>
+                                        <input type="radio" id="resto4" asp-for="propertyModel.RestaurantRatings" value="4" name="RestaurantRatings" /><label for="resto4"></label>
+                                        <input type="radio" id="resto3" asp-for="propertyModel.RestaurantRatings" value="3" name="RestaurantRatings" /><label for="resto3"></label>
+                                        <input type="radio" id="resto2" asp-for="propertyModel.RestaurantRatings" value="2" name="RestaurantRatings" /><label for="resto2"></label>
+                                        <input type="radio" id="resto1" asp-for="propertyModel.RestaurantRatings" value="1" name="RestaurantRatings" /><label for="resto1"></label>
+                                    </div>
+                                    <span asp-validation-for="propertyModel.RestaurantRatings" class="text-danger"></span>
+                                    <div class="row mb-3 column-gap-2 mx-auto p-0">
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property's closest restaurant is within one (1) hour radius.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property's closest restaurant is within a forty (40) minute radius.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property's closest restaurant is within thirty (30) minute radius.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property's closest restaurant is within a twenty (20) minute radius.</div>
+                                        </div>
+                                        <div class="col p-2 rating-desc">
+                                            <div>The property's closest restaurant is within a fifteen (15) minute radius.</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div> <!-- neighborhood ratings end tag -->
+
+                            <!-- POST BUTTON -->
+                            <div class="row mx-auto p-0 justify-content-end align-items-end">
+                                <div class="col-sm-3 d-flex justify-content-end align-items-center">
+                                    <input type="submit" value="Post" class="btn" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+
+        function readURL(input, imgId) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#' + imgId)
+                        .attr('src', e.target.result)
+                        .width(100)
+                        .height(100);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+    </script>
+}

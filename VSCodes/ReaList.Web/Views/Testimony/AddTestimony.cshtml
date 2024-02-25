@@ -1,0 +1,94 @@
+@model ReaList.Library.Model.Testimonies.TestimoniesModel
+
+@{
+    ViewData["Title"] = "AddTestimony";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Testimony</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/addtestimony.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap Font and Icons 1.3.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="d-flex container justify-content-center">
+            <div class="row g-3 col-md-12">
+
+                <h2 class="mt-5">Write a Testimony</h2>
+                <h6 class="mt-4">Thank you for choosing ReaList! Please write us an honest review about your experiences with ReaList and get a chance to get featured in our page.</h6>
+
+                <form asp-controller="Testimony" asp-action="SaveTestimony" method="post">
+                    <div class="form-group col-lg-12 ">
+                        <div class="row">
+
+                            @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                            {
+                                <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+                            }
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <!-- Testimony ID -->
+                            <div class="form-group">
+                                <input asp-for="TestimonyID" class="form-control" type="hidden" />
+                            </div>
+
+                            <!-- Agent ID -->
+                            <div class="form-group">
+                                <input asp-for="AgentID" class="form-control" type="hidden" />
+                            </div>
+
+                            <!-- Testimony -->
+                            <div class="col-md-12">
+                                <label asp-for="Testimony" class="pb-1 h6">Share Your Testimonial</label>
+                                <br />
+                                <textarea asp-for="Testimony" class="form-control mb-3" rows="14" cols="173"></textarea>
+                                <span asp-validation-for="Testimony" class="text-danger"></span>
+                            </div>
+
+                            <!-- Date Created -->
+                            <div class="form-group">
+                                <input asp-for="DateCreated" class="form-control" type="hidden" />
+                            </div>
+                            <br />
+
+                            <!-- Submit Button -->
+                            <div class="row mx-auto p-0 justify-content-end align-items-end">
+                                <div class="col-sm-3 d-flex justify-content-end align-items-center">
+                                    <input type="submit" value="Submit" class="btn" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        @section Scripts {
+            @{
+                await Html.RenderPartialAsync("_ValidationScriptsPartial");
+            }
+        }
+
+    </main>
+</body>
+</html>
+
+
+

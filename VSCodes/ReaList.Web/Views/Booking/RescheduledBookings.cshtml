@@ -1,0 +1,196 @@
+﻿@model List<ReaList.Library.Model.Bookings.BookingModel>
+
+@{
+    ViewData["Title"] = "RecentBookings";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rescheduled Bookings</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/agent-bookingmanagement.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap Font and Icons 1.3.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="d-flex container justify-content-center">
+            <div class="row g-3 col-md-12">
+
+                <div class="container">
+                    <div class="row mt-5">
+
+                        <!-- text header -->
+                        <div class="container col-md-12">
+                            <h3 class="text-header">Bookings</h3>
+                        </div>
+
+                        @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                        {
+                            <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+                        }
+                        <hr />
+
+                        <!-- semi-nav -->
+                        <div class="container semi-nav p-0 mt-2 mb-5">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a asp-action="RecentBookings" class="nav-link nav2">Recent Bookings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="ApprovedBookings" class="nav-link nav2">Approved Bookings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="RescheduledBookings" class="nav-link nav2 active">Rescheduled Bookings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-action="CancelledBookings" class="nav-link nav2">Cancelled Bookings</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <table class="table mt-3" id="reschedbkngs" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Property Name</th>
+                                    <th>Location</th>
+                                    <th>Name</th>
+                                    <th>Contact No</th>
+                                    <th>Email</th>
+                                    <th>VisitDate</th>
+                                    <th>VisitTime</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var booking in Model)
+                                {
+                                    @if (booking.BookingStatus == 1)
+                                    {
+                                        <tr>
+                                            <td>@booking.BookingID</td>
+                                            <td>@booking.PropertyName</td>
+                                            <td>
+                                                @if (booking.City == "")
+                                                {
+                                                    @booking.Municipality
+                                                }
+                                                @if (booking.Municipality == "")
+                                                {
+                                                    @booking.City
+                                                }
+                                            </td>
+                                            <td>@booking.CustomerName</td>
+                                            <td>@booking.PhoneNumber</td>
+                                            <td>@booking.Email</td>
+                                            <td>@booking.VisitDate.Month/@booking.VisitDate.Day/@booking.VisitDate.Year</td>
+                                            <td>@booking.VisitTime</td>
+                                            <td>@booking.BookingStatusName</td>
+                                            <td>
+                                                @Html.ActionLink("Cancel", "Cancel", new { id = booking.BookingID })
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                        <div class="col-md-6 pull-left" id="appendhere"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*<!---Datatable initialization->*@
+        <script>
+            var date = new Date();
+            var module = "Listings For Sale";
+            var table = $('#reschedbkngs').DataTable({
+                "searching": true,
+                "scrollX": false,
+                "bInfo": false,
+                "paging": true,
+                colReorder: false,
+                responsive: false,
+                buttons: {
+                    buttons: [
+                        {
+                            extend: 'print', className: 'btn btn-success', title: '',
+                            message: function () {
+                                return '<br/>' + module + ' Report<br/>For the Period Ending<br/>' + date.toDateString();
+                            },
+                            footer: true,
+                            exportOptions: {
+                                columns: [0, 1, 2, 3, 4, 5, 6, 7],
+                                search: 'applied',
+                                order: 'applied',
+                            },
+                            customize: function (win) {
+                                $(win.document.body)
+                                    .css('font-size', '15pt')
+                                    .css('text-align', 'center')
+                                    .prepend('<hr>');
+                            }
+                        },
+                        {
+                            extend: 'excel', className: 'btn btn-success',
+                            title: module + ' Report - ',
+                            messageTop: 'Reports | ' + module + ' Reports As of ' + date.toDateString().split(' ').slice(1).join(' '),
+                            footer: true,
+                            exportOptions: {
+                                columns: [0, 1, 2, 3, 4, 5, 6, 7],
+                            },
+                            customize: function (xlsx) {
+                                var sheet = xlsx.xl.worksheets['sheet1.xml'];
+
+                                // jQuery selector to add a border
+                                $('row c[r^="A"]', sheet).attr('s', '50');
+                                $('row:nth-child(2) c:nth-child(1)', sheet).attr('s', '51');
+                                $('row:nth-child(1) c:nth-child(1)', sheet).attr('s', '51');
+
+                                $('row c[r^="B"]', sheet).attr('s', '50');
+                                $('row c[r^="C"]', sheet).attr('s', '50');
+                                $('row c[r^="D"]', sheet).attr('s', '50');
+                            }
+                        },
+                        {
+                            extend: 'pdf', className: 'btn btn-primary',
+                            title: module + ' Report',
+                            messageTop: 'For the Period Ending ' + date.toDateString(),
+                            exportOptions: {
+                                columns: [0, 1, 2, 3, 4, 5, 6, 7],
+                                search: 'applied',
+                                order: 'applied',
+                            },
+                            customize: function (doc) {
+                                doc.styles.tableHeader.fontSize = 12;
+                                doc.styles.title.fontSize = 15;
+                                doc.styles.title.alignment = 'center';
+                                doc.content[1].alignment = 'center';
+                            }
+                        }
+                    ]
+                },
+            });
+            $('#appendhere').html('');
+            table.buttons().container().appendTo('#appendhere');
+        </script>
+
+    </main>
+</body>
+</html>

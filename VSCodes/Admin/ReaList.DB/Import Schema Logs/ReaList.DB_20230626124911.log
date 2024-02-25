@@ -1,0 +1,88 @@
+6/26/2023 8:49:11	This log contains information about the import schema operation into project 'ReaList.DB' on computer 'CHARLES' by user 'Charles Emerson Eje'.
+6/26/2023 8:49:12	Import of database schema has started.
+6/26/2023 8:49:22	Gathering database credentials
+6/26/2023 8:49:22	Gathering database options
+6/26/2023 8:49:22	Gathering generic database scoped configuration option
+6/26/2023 8:49:22	Gathering users
+6/26/2023 8:49:22	Gathering roles
+6/26/2023 8:49:22	Gathering application roles
+6/26/2023 8:49:22	Gathering role memberships
+6/26/2023 8:49:22	Gathering filegroups
+6/26/2023 8:49:22	Gathering full-text catalogs
+6/26/2023 8:49:22	Gathering assemblies
+6/26/2023 8:49:22	Gathering certificates
+6/26/2023 8:49:22	Gathering asymmetric keys
+6/26/2023 8:49:22	Gathering symmetric keys
+6/26/2023 8:49:22	Gathering encrypted symmetric keys
+6/26/2023 8:49:22	Gathering schemas
+6/26/2023 8:49:22	Gathering XML schema collections
+6/26/2023 8:49:22	Gathering user-defined data types
+6/26/2023 8:49:22	Gathering user-defined types
+6/26/2023 8:49:22	Gathering table types
+6/26/2023 8:49:22	Gathering unique keys for table types
+6/26/2023 8:49:22	Gathering primary keys for table types
+6/26/2023 8:49:23	Gathering indexes for table types
+6/26/2023 8:49:23	Gathering check constraints for table types
+6/26/2023 8:49:23	Gathering default constraints for table types
+6/26/2023 8:49:23	Gathering partition functions
+6/26/2023 8:49:23	Gathering partition schemes
+6/26/2023 8:49:23	Gathering functions
+6/26/2023 8:49:23	Gathering encrypted functions
+6/26/2023 8:49:23	Gathering aggregates
+6/26/2023 8:49:23	Gathering procedures
+6/26/2023 8:49:23	Gathering encrypted procedures
+6/26/2023 8:49:23	Gathering tables
+6/26/2023 8:49:23	Gathering primary keys
+6/26/2023 8:49:23	Gathering unique constraints
+6/26/2023 8:49:23	Gathering foreign keys
+6/26/2023 8:49:23	Gathering default constraints
+6/26/2023 8:49:23	Gathering check constraints
+6/26/2023 8:49:23	Gathering views
+6/26/2023 8:49:23	Gathering encrypted views
+6/26/2023 8:49:23	Gathering indexes
+6/26/2023 8:49:23	Gathering statistics
+6/26/2023 8:49:23	Gathering full-text index stoplists
+6/26/2023 8:49:23	Gathering search property lists
+6/26/2023 8:49:23	Gathering search properties
+6/26/2023 8:49:23	Gathering full-text indexes
+6/26/2023 8:49:23	Gathering column store indexes
+6/26/2023 8:49:23	Gathering spatial indexes
+6/26/2023 8:49:23	Gathering XML indexes
+6/26/2023 8:49:23	Gathering Selective XML indexes
+6/26/2023 8:49:23	Gathering encrypted triggers
+6/26/2023 8:49:23	Gathering triggers
+6/26/2023 8:49:23	Gathering encrypted and clr ddl triggers
+6/26/2023 8:49:23	Gathering ddl triggers
+6/26/2023 8:49:23	Creating edge constraints
+6/26/2023 8:49:23	Gathering synonyms
+6/26/2023 8:49:23	Gathering defaults
+6/26/2023 8:49:23	Gathering data constraint uddt bindings
+6/26/2023 8:49:23	Gathering rules
+6/26/2023 8:49:23	Gathering data constraint uddt bindings
+6/26/2023 8:49:23	Gathering message types
+6/26/2023 8:49:23	Gathering queues
+6/26/2023 8:49:23	Gathering contracts
+6/26/2023 8:49:23	Gathering services
+6/26/2023 8:49:23	Gathering event notifications
+6/26/2023 8:49:23	Gathering remote service bindings
+6/26/2023 8:49:23	Gathering broker priorities
+6/26/2023 8:49:23	Gathering signatures
+6/26/2023 8:49:23	Gathering compression options
+6/26/2023 8:49:23	Gathering sequence types
+6/26/2023 8:49:23	Gathering security policies
+6/26/2023 8:49:23	Gather column encryption keys
+6/26/2023 8:49:23	Gathering column master keys
+6/26/2023 8:49:23	Gathering external data sources
+6/26/2023 8:49:24	Gathering external file formats
+6/26/2023 8:49:24	Gathering external tables
+6/26/2023 8:49:24	Gathering XML index compression options
+6/26/2023 8:49:24	Gathering extended properties
+6/26/2023 8:49:24	Gathering assemblies
+6/26/2023 8:49:24	Gathering credentials
+6/26/2023 8:49:24	Gathering logins
+6/26/2023 8:49:24	Gathering server audits
+6/26/2023 8:49:25	Scanning project for duplicate elements
+6/26/2023 8:49:25	Finished duplicate element processing
+6/26/2023 8:49:26	Finished importing database.
+6/26/2023 8:49:26	A summary of the import was saved to the following location: C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\Import Schema Logs\ReaList.DB_20230626124911.log
+6/26/2023 8:49:26	Click Finish to continue...

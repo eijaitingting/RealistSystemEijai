@@ -1,0 +1,10 @@
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\bin\Debug\ReaList.DB.dacpac
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\bin\Debug\ReaList.DB.dll
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\bin\Debug\ReaList.DB.pdb
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\obj\Debug\ReaList.DB.sqlproj.AssemblyReference.cache
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\obj\Debug\Model.xml
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\obj\Debug\refactor.xml
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\obj\Debug\postdeploy.sql
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\obj\Debug\predeploy.sql
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\obj\Debug\ReaList.DB.dll
+C:\Users\Charles Emerson Eje\OneDrive - De La Salle-College of Saint Benilde\Desktop\ISPROJ2\Admin\ReaList.DB\obj\Debug\ReaList.DB.pdb

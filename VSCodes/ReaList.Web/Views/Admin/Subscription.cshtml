@@ -1,0 +1,110 @@
+﻿@model ReaList.Library.Model.RealistsVM
+@{
+}
+<table class="table mt-3" id="subtbl" width="100%">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Subscription Type Name</th>
+            <th>Agent Name</th>
+            <th>Reference NUmber</th>
+            <th>Start Date</th>
+            <th>Expiry Date</th>
+            <th>Status</th>
+            <th>Photo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sub in Model.subscriptionList)
+        {
+            var agent = Model.agentAccountsList.Where(x => x.AgentID == sub.AgentID).FirstOrDefault();
+            var subtype = Model.subscriptionTypeList.Where(x => x.SubscriptionTypeID == sub.SubscriptionTypeID).FirstOrDefault();
+            <tr>
+
+                <td>@sub.SubscriptionID</td>
+                <td>@subtype.SubscriptionTypeName</td>
+                <td>@(agent.FirstName + " " + agent.LastName)</td>
+                <td>@sub.ReferenceNumber</td>
+                <td>@sub.StartDate</td>
+                <td>@sub.ExpiryDate</td>
+                <td>@sub.IsActive</td>
+                <td><img src="~/UploadedFiles/@sub.SubPhoto" style="width: 100px; height: 100px;" /></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="col-md-6 pull-left" id="appendhere"></div>
+@*<!---Datatable initialization->*@
+<script>
+    var date = new Date();
+    var module = "Listings For Sale";
+    var table = $('#subtbl').DataTable({
+        "searching": true,
+        "scrollX": false,
+        "bInfo": false,
+        "paging": true,
+        colReorder: false,
+        responsive: false,
+        buttons: {
+            buttons: [
+                {
+                    extend: 'print', className: 'btn btn-success', title: '',
+                    message: function () {
+                        return '<br/>' + module + ' Report<br/>For the Period Ending<br/>' + date.toDateString();
+                    },
+                    footer: true,
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6, 7],
+                        search: 'applied',
+                        order: 'applied',
+                    },
+                    customize: function (win) {
+                        $(win.document.body)
+                            .css('font-size', '15pt')
+                            .css('text-align', 'center')
+                            .prepend('<hr>');
+                    }
+                },
+                {
+                    extend: 'excel', className: 'btn btn-success',
+                    title: module + ' Report - ',
+                    messageTop: 'Reports | ' + module + ' Reports As of ' + date.toDateString().split(' ').slice(1).join(' '),
+                    footer: true,
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6, 7],
+                    },
+                    customize: function (xlsx) {
+                        var sheet = xlsx.xl.worksheets['sheet1.xml'];
+
+                        // jQuery selector to add a border
+                        $('row c[r^="A"]', sheet).attr('s', '50');
+                        $('row:nth-child(2) c:nth-child(1)', sheet).attr('s', '51');
+                        $('row:nth-child(1) c:nth-child(1)', sheet).attr('s', '51');
+
+                        $('row c[r^="B"]', sheet).attr('s', '50');
+                        $('row c[r^="C"]', sheet).attr('s', '50');
+                        $('row c[r^="D"]', sheet).attr('s', '50');
+                    }
+                },
+                {
+                    extend: 'pdf', className: 'btn btn-primary',
+                    title: module + ' Report',
+                    messageTop: 'For the Period Ending ' + date.toDateString(),
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6, 7],
+                        search: 'applied',
+                        order: 'applied',
+                    },
+                    customize: function (doc) {
+                        doc.styles.tableHeader.fontSize = 12;
+                        doc.styles.title.fontSize = 15;
+                        doc.styles.title.alignment = 'center';
+                        doc.content[1].alignment = 'center';
+                    }
+                }
+            ]
+        },
+    });
+    $('#appendhere').html('');
+    table.buttons().container().appendTo('#appendhere');
+</script>

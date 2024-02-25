@@ -1,0 +1,124 @@
+﻿@model ReaList.Library.Model.Bookings.BookingModel
+
+@{
+    ViewData["Title"] = "Book";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/addcomplaint.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap Font and Icons 1.3.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="d-flex container justify-content-center">
+            <div class="row g-3 col-md-12">
+
+                <h2 class="mt-5">Book</h2>
+
+                <form asp-action="AddBooking" method="post">
+
+                    <div class="form-group col-lg-12 ">
+                        <div class="row">
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <input asp-for="BookingID" class="form-control" type="hidden" />
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="AgentID" class="form-control" type="hidden" />
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="CustomerID" class="form-control" type="hidden" />
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="PropertyID" class="form-control" type="hidden" />
+                            </div>
+                            <div class="col-md-12">
+                                <label asp-for="VisitDate" class="pb-1 h6">Visit Date</label>
+                                <input type="date" id="visitDateInput" asp-for="VisitDate" class="form-control" />
+                                <span asp-validation-for="VisitDate" class="text-danger"></span>
+                            </div>
+                            <br />
+
+                            <div class="col-md-12">
+                                <label asp-for="VisitTime" class="pb-1 h6">Visit Time</label>
+                                <select asp-for="VisitTime" name="VisitTime" class="form-control">
+                                    <option value="7:00 AM - 8:30 AM">7:00 AM - 8:30 AM</option>
+                                    <option value="9:00 AM - 10:30 AM">9:00 AM - 10:30 AM</option>
+                                    <option value="11:00 AM - 12:30 AM">11:00 AM - 12:30 AM</option>
+                                    <option value="1:00 PM - 2:30 PM">1:00 PM - 2:30 PM</option>
+                                    <option value="3:00 PM - 4:30 PM">3:00 PM - 4:30 PM</option>
+                                    <option value="5:00 PM - 6:30 PM">5:00 PM - 6:30 PM</option>
+                                    <option value="7:00 PM - 8:30 PM">7:00 PM - 8:30 PM</option>
+                                </select>
+                                <span asp-validation-for="VisitTime" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="BookingStatus" class="form-control" type="hidden" />
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="BookingPostStatus" class="form-control" type="hidden" />
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="DateCreated" class="form-control" type="hidden" />
+                            </div>
+                            <br />
+
+                            <div class="row mx-auto p-0 justify-content-end align-items-end">
+                                <div class="col-sm-3 d-flex justify-content-end align-items-center">
+                                    <input type="submit" value="Book" class="btn" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        @section Scripts {
+            <script>
+                // Add an event listener for the DOMContentLoaded event
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Get the input element by its id
+                    var visitDateInput = document.getElementById("visitDateInput");
+
+                    // Get the current date as a JavaScript Date object
+                    var today = new Date();
+
+                    // Calculate the date for tomorrow
+                    var tomorrow = new Date(today);
+                    tomorrow.setDate(today.getDate() + 1);
+
+                    // Format tomorrow's date as a string in the "YYYY-MM-DD" format
+                    var tomorrowString = tomorrow.toISOString().split('T')[0];
+
+                    // Set the min attribute of the input element to tomorrow's date
+                    visitDateInput.min = tomorrowString;
+                });
+            </script>
+
+        }
+
+    </main>
+</body>
+</html>
