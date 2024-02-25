@@ -12165,11 +12165,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eijai\\OneDrive\\Documents\\GitHub\\RealistSystem\\VSCodes\\ReaList.Web\\ReaList.Web.csproj",
+      "projectUniqueName": "C:\\Users\\eijai\\OneDrive\\Documents\\GitHub\\RealistSystemEijai\\VSCodes\\ReaList.Web\\ReaList.Web.csproj",
       "projectName": "ReaList.Web",
-      "projectPath": "C:\\Users\\eijai\\OneDrive\\Documents\\GitHub\\RealistSystem\\VSCodes\\ReaList.Web\\ReaList.Web.csproj",
+      "projectPath": "C:\\Users\\eijai\\OneDrive\\Documents\\GitHub\\RealistSystemEijai\\VSCodes\\ReaList.Web\\ReaList.Web.csproj",
       "packagesPath": "C:\\Users\\eijai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eijai\\OneDrive\\Documents\\GitHub\\RealistSystem\\VSCodes\\ReaList.Web\\obj\\",
+      "outputPath": "C:\\Users\\eijai\\OneDrive\\Documents\\GitHub\\RealistSystemEijai\\VSCodes\\ReaList.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\eijai\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -12186,8 +12186,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\eijai\\OneDrive\\Documents\\GitHub\\RealistSystem\\VSCodes\\ReaList.Library\\ReaList.Library.csproj": {
-              "projectPath": "C:\\Users\\eijai\\OneDrive\\Documents\\GitHub\\RealistSystem\\VSCodes\\ReaList.Library\\ReaList.Library.csproj"
+            "C:\\Users\\eijai\\OneDrive\\Documents\\GitHub\\RealistSystemEijai\\VSCodes\\ReaList.Library\\ReaList.Library.csproj": {
+              "projectPath": "C:\\Users\\eijai\\OneDrive\\Documents\\GitHub\\RealistSystemEijai\\VSCodes\\ReaList.Library\\ReaList.Library.csproj"
             }
           }
         }
