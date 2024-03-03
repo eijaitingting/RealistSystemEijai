@@ -96,3 +96,17 @@ C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystem\VSCodes\ReaList.Library\o
 C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystem\VSCodes\ReaList.Library\obj\Debug\net6.0\ReaList.Library.pdb
 C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystem\VSCodes\ReaList.Library\obj\Debug\net6.0\ReaList.Library.genruntimeconfig.cache
 C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystem\VSCodes\ReaList.Library\obj\Debug\net6.0\ref\ReaList.Library.dll
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\bin\Debug\net6.0\ReaList.Library.deps.json
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\bin\Debug\net6.0\ReaList.Library.runtimeconfig.json
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\bin\Debug\net6.0\ReaList.Library.dll
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\bin\Debug\net6.0\ReaList.Library.pdb
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\obj\Debug\net6.0\ReaList.Library.csproj.AssemblyReference.cache
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\obj\Debug\net6.0\ReaList.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\obj\Debug\net6.0\ReaList.Library.AssemblyInfoInputs.cache
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\obj\Debug\net6.0\ReaList.Library.AssemblyInfo.cs
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\obj\Debug\net6.0\ReaList.Library.csproj.CoreCompileInputs.cache
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\obj\Debug\net6.0\ReaList.Library.dll
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\obj\Debug\net6.0\refint\ReaList.Library.dll
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\obj\Debug\net6.0\ReaList.Library.pdb
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\obj\Debug\net6.0\ReaList.Library.genruntimeconfig.cache
+C:\Users\eijai\OneDrive\Documents\GitHub\RealistSystemEijai\VSCodes\ReaList.Library\obj\Debug\net6.0\ref\ReaList.Library.dll
